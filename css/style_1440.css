@@ -1,0 +1,308 @@
+* {
+  box-sizing: border-box;
+  font-family: 'El Messiri', sans-serif;
+  /* font-family: 'Inter', sans-serif; */
+  color: rgb(98, 13, 42);
+}
+
+a {
+  text-decoration: none;
+}
+
+li, ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+}
+
+body.block {
+  overflow: hidden;
+}
+
+h1, h2, h3 {
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 25px;
+  font-weight: 600;
+}
+
+/* bodyWrapper */
+
+.bodyWrapper {
+  margin: 0 auto;
+  height: 100%;
+  max-width: 1440px;
+  background-color: rgb(241, 241, 241);
+}
+
+.container {
+  padding: 15px;
+  max-width: 1200px;
+  min-width: 700px;
+  width: 100%;
+}
+
+/* header */
+
+header {
+  position: fixed;
+  display: flex;
+  left: 0;
+  top: 0;
+  justify-content: center;
+  width: 100%;
+  height: 90px;
+  background-color: rgba(241, 241, 241, 0.7);
+  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%), 0px 2px 3px rgb(13 96 111 / 16%);
+  font-size: 18px;
+  font-weight: bold;
+  z-index: 100;
+}
+
+.headerLogo {
+  cursor: pointer;
+}
+
+.headerContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav {
+  display: flex;
+  width: 100%;
+  flex: 1 1 100%;
+  justify-content: center;
+}
+
+.navUl {
+  display: flex;
+  min-width: 300px;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+.navLi {
+  display: block;
+  cursor: pointer;
+}
+
+/* main */
+
+.mainContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* hello section */
+
+.helloSection {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 1100px;
+}
+
+.logoBlock {
+  background-image: url(/qatar2022/pictures/qatar_logo_big.jpeg);
+  background-size: cover;
+  background-position: 50% 50%;
+  height:100%;
+  width: 60%;
+}
+
+/* rightColumn */
+
+.rightColumn {
+  max-width: 630px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  gap: 40px;
+}
+
+.rightColumnSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+/* scheduleMiniBlock */
+
+.scheduleMiniDate {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.scheduleLi {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  padding: 10px 0px;
+  font-size: 14px;
+}
+
+.scheduleLi .teamBlock {
+  font-size: 20px;
+  width: 200px;
+  text-align: center;
+}
+
+.scoreMini {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 70px;
+
+}
+
+.scoreInput {
+  width: 30px;
+  height: 30px;
+}
+
+.scheduleMiniButton {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+/* tableMini */
+
+.tableMini {
+  width: 540px;
+  position: relative;
+}
+
+.tableMiniUl {
+  width: 100%;
+}
+
+.tableMiniLi {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin: 20px 0px;
+}
+
+/* blocks */
+
+.miniBlock {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(98, 13, 42);
+  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%), 0px 2px 3px rgb(13 96 111 / 16%);
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.teamBlock {
+  background-color: white;
+  border-radius: 10px;
+  padding: 5px 20px 0px;
+  min-height: 37px;
+}
+
+/* buttons */
+
+.bigRedButton {
+  background-color: rgb(98, 13, 42);
+  color: rgb(241, 241, 241);
+  padding: 10px 30px;
+  border-radius: 20px;
+  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%), 0px 2px 3px rgb(13 96 111 / 16%);
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  outline: none;
+}
+
+.bigRedButton:hover {
+  background-color: rgba(98, 13, 41, 0.9);
+  transform: scale(0.9);
+}
+
+/*  */
+.bigWhiteButton {
+  background-color: rgb(241, 241, 241);
+  color: rgb(98, 13, 42);
+  padding: 10px 30px;
+  border-radius: 20px;
+  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%), 0px 2px 3px rgb(13 96 111 / 16%);
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  outline: none;
+}
+
+.bigWhiteButton:hover {
+  background-color: rgba(241, 241, 241, 0.9);
+  transform: scale(0.9);
+}
+
+
+/* animation */
+
+.animationLinks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: 0.3s;
+}
+
+.animationLinks:hover {
+  color: rgba(98, 13, 41, 0.9);
+  transform: scale(0.9);
+}
+
+
+.animationLinks::after {
+  content: '';
+  background-color: rgb(98, 13, 42);
+  width: 0px;
+  height: 1px;
+  border-radius: 20px;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.animationLinks:hover::after {
+  opacity: 1;
+  width: 100%;
+  color: rgba(98, 13, 41, 0.9);
+}
