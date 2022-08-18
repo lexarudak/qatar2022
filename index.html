@@ -4,9 +4,155 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <link rel="icon" href="pictures/qatar_logo_mini.png">
+  <link rel="stylesheet" href="css/icon-font.css">
+  <link rel="stylesheet" href="css/owfont-regular.css">
+  <link rel="stylesheet" href="css/style_1440.css">
   <title>Qatar 2022</title>
 </head>
 <body>
-  
+  <div class="bodyWrapper">
+    <header class="header">
+      <div class="headerContainer container">
+        <div class="headerLogo">
+          <img src="pictures/qatar_logo.png" alt="qatar logo" height="60">
+        </div>
+        <nav class="nav">
+          <ul class="navUl">
+            <li class="navLi animationLinks">Home</li>
+            <li class="navLi animationLinks">Schedule</li>
+            <li class="navLi animationLinks">Table</li>
+            <li class="navLi animationLinks">World Cup</li>
+          </ul>
+        </nav>
+        <div class="loginButton bigRedButton">
+          Login
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <div class="mainContainer conatiner">
+        <section class="helloSection">
+          <div class="logoBlock">
+          </div>
+          <div class="rightColumn">
+            <div class="rightColumnSection">
+              <h2 class="scheduleMiniBlockHeader">
+                NEXT MATCHES
+              </h2>
+              <form class="scheduleMiniBlock miniBlock" name="scheduleMini">
+                <h3 class="scheduleMiniDate teamBlock">
+                  21 November 2022
+                </h3>
+                <ul class="scheduleMiniUl">
+                  <li class="scheduleLi">
+                    <div class="firstTeamMini teamBlock">
+                      England
+                    </div>
+                    <div class="scoreMini">
+                      <input class="scoreInput" type="number">
+                      <input class="scoreInput" type="number">
+                    </div>
+                    <div class="secondTeamMini teamBlock">
+                      Iran
+                    </div>
+                  </li>
+                  <li class="scheduleLi">
+                    <div class="firstTeamMini teamBlock">
+                      Senegal
+                    </div>
+                    <div class="scoreMini">
+                      <input class="scoreInput" type="number">
+                      <input class="scoreInput" type="number">
+                    </div>
+                    <div class="secondTeamMini teamBlock">
+                      Netherlands
+                    </div>
+                  </li>
+                  <li class="scheduleLi">
+                    <div class="firstTeamMini teamBlock">
+                      USA
+                    </div>
+                    <div class="scoreMini">
+                      <input class="scoreInput" type="number">
+                      <input class="scoreInput" type="number">
+                    </div>
+                    <div class="secondTeamMini teamBlock">
+                      Wales
+                    </div>
+                  </li>
+                </ul>
+                <button class="bigWhiteButton scheduleMiniButton" type="submit" form="scheduleMini">
+                  Save
+                </button>
+              </form>
+            </div>
+            <div class="rightColumnSection">
+              <h2>
+                TABLE
+              </h2>
+              <div class="tableMini miniBlock">
+                <ul class="tableMiniUl">
+                  <li class="tableMiniLi teamBlock">
+                    <h3 class="playerNameMini">
+                      Player 1
+                    </h3>
+                    <div class="playerPointsMini">
+                     30
+                    </div>
+                  </li>
+                  <li class="tableMiniLi teamBlock">
+                    <h3 class="playerNameMini">
+                      Player 2
+                    </h3>
+                    <div class="playerPointsMini">
+                      27
+                    </div>
+                  </li>
+                  <li class="tableMiniLi teamBlock">
+                    <h3 class="playerNameMini">
+                      Player 3
+                    </h3>
+                    <div class="playerPointsMini">
+                      5
+                    </div>
+                  </li>
+                  <li class="tableMiniLi teamBlock">
+                    <h3 class="playerNameMini">
+                      Player 4
+                    </h3>
+                    <div class="playerPointsMini">
+                      1
+                    </div>
+                  </li>
+                  <li class="tableMiniLi teamBlock">
+                    <h3 class="playerNameMini">
+                      Player 5
+                    </h3>
+                    <div class="playerPointsMini">
+                      0
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="footerContainer container">
+
+      </div>
+    </footer>
+
+  </div>
+
+<script src="js/index.js" type="module"></script>
 </body>
 </html>
