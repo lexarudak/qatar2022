@@ -7,9 +7,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
     rel="stylesheet">
   <link rel="icon" href="pictures/qatar_logo_mini.png">
+  <link rel="stylesheet" href="css/flag-icon.css">
   <link rel="stylesheet" href="css/icon-font.css">
   <link rel="stylesheet" href="css/owfont-regular.css">
   <link rel="stylesheet" href="css/style_1440.css">
@@ -36,54 +37,92 @@
       </div>
     </header>
     <main class="main">
-      <div class="mainContainer conatiner">
+      <div class="mainContainer container">
         <section class="helloSection">
-          <div class="logoBlock">
+          <div class="leftColumn">
+            <div class="deadlineBlock">
+              <h1 class="deadlineTitle">
+                DEADLINE
+              </h1>
+              <div class="deadlineTime">
+                <div class="deadlineSection">
+                  <span class="deadlineText">Days</span>
+                  <span class="deadlineNum deadlineDays">92</span>
+                </div>
+                <div class="deadlineSection">
+                  <span class="deadlineText">Hours</span>
+                  <span class="deadlineNum deadlineHours">21</span>
+                </div>
+                <div class="deadlineSection">
+                  <span class="deadlineText">Minutes</span>
+                  <span class="deadlineNum deadlineMinutes">58</span>
+                </div>
+              </div>
+            </div>
           </div>
           <div class="rightColumn">
-            <div class="rightColumnSection">
+            <div class="rightColumnSection section1">
               <h2 class="scheduleMiniBlockHeader">
                 NEXT MATCHES
               </h2>
               <form class="scheduleMiniBlock miniBlock" name="scheduleMini">
-                <h3 class="scheduleMiniDate teamBlock">
-                  21 November 2022
-                </h3>
+                <div class="scheduleMiniDate">
+                  <span class="nextDate">22 November 2022</span>
+                </div>
                 <ul class="scheduleMiniUl">
                   <li class="scheduleLi">
-                    <div class="firstTeamMini teamBlock">
-                      England
+                    <div class="scheduleLiTopBlock">
+                      <div class="firstTeamMini teamBlock">
+                        <span class="flag-icon flag-icon-gb-eng"></span> <span class="team">England</span>
+                      </div>
+                      <div class="scoreMini">
+                        <input class="scoreInput" type="number">
+                        <input class="scoreInput" type="number">
+                      </div>
+                      <div class="secondTeamMini teamBlock">
+                        <span class="team">Iran</span>
+                        <span class="flag-icon flag-icon-ir"></span>
+                      </div>
                     </div>
-                    <div class="scoreMini">
-                      <input class="scoreInput" type="number">
-                      <input class="scoreInput" type="number">
-                    </div>
-                    <div class="secondTeamMini teamBlock">
-                      Iran
-                    </div>
-                  </li>
-                  <li class="scheduleLi">
-                    <div class="firstTeamMini teamBlock">
-                      Senegal
-                    </div>
-                    <div class="scoreMini">
-                      <input class="scoreInput" type="number">
-                      <input class="scoreInput" type="number">
-                    </div>
-                    <div class="secondTeamMini teamBlock">
-                      Netherlands
+                    <div class="scheduleLiBottomBlock">
+                      <span class="matchTime">19:00</span><span class="matchDate">22.11.22</span>
                     </div>
                   </li>
                   <li class="scheduleLi">
-                    <div class="firstTeamMini teamBlock">
-                      USA
+                    <div class="scheduleLiTopBlock">
+                        <div class="firstTeamMini teamBlock">
+                        <span class="flag-icon flag-icon-sn"></span> <span class="team">Senegal</span>
+                      </div>
+                      <div class="scoreMini">
+                        <input class="scoreInput" type="number">
+                        <input class="scoreInput" type="number">
+                      </div>
+                      <div class="secondTeamMini teamBlock">
+                        <span class="team">Netherlands</span>
+                        <span class="flag-icon flag-icon-nl"></span>
+                      </div>
                     </div>
-                    <div class="scoreMini">
-                      <input class="scoreInput" type="number">
-                      <input class="scoreInput" type="number">
+                    <div class="scheduleLiBottomBlock">
+                      <span class="matchTime">19:00</span><span class="matchDate">22.11.22</span>
                     </div>
-                    <div class="secondTeamMini teamBlock">
-                      Wales
+                  </li>
+                  <li class="scheduleLi">
+                    <div class="scheduleLiTopBlock">
+                      <div class="firstTeamMini teamBlock">
+                        <span class="flag-icon flag-icon-us"></span>
+                        <span class="team">USA</span>
+                      </div>
+                      <div class="scoreMini">
+                        <input class="scoreInput" type="number">
+                        <input class="scoreInput" type="number">
+                      </div>
+                      <div class="secondTeamMini teamBlock">
+                        <span class="team">Wales</span>
+                        <span class="flag-icon flag-icon-gb-wls"></span>
+                      </div>
+                    </div>
+                    <div class="scheduleLiBottomBlock">
+                      <span class="matchTime">19:00</span><span class="matchDate">22.11.22</span>
                     </div>
                   </li>
                 </ul>
