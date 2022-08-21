@@ -341,7 +341,7 @@ margin-left: auto;
   box-shadow: 0px 4px 4px rgb(0 0 0 / 25%), 0px 2px 3px rgb(13 96 111 / 16%);
   padding: 30px;
   border-radius: 30px;
-  margin: 50px 0px;
+  margin: 80px 0px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -416,10 +416,76 @@ margin-left: auto;
   gap: 10px;
 }
 
-.playerBetCard .playerCard{
+/* ------------------------------------ Table section */
 
+.tableSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+.mainTable {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.bigTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.bigTable tr {
+  background-color: rgb(241, 241, 241);
+  height: 40px;
+  padding: 0px 10px;
+  transition: .3s;
+  cursor: pointer;
+  display: flex;
+  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%), 0px 2px 3px rgb(13 96 111 / 16%);
+  border-radius: 30px;
+  margin-bottom: 10px;
+}
+
+
+
+.bigTable td {
+  width: 40px;
+  text-align: center;
+  padding: 5px;
+}
+
+.bigTable tr:hover {
+  background-color: rgb(232, 211, 39);
+}
+
+.bigTable td.tdName {
+  text-align: left;
+}
+
+.bigTable tr:first-child {
+  background-color: rgb(232, 211, 39);
+}
+
+
+tr.myTr {
+  background-color: rgb(39, 207, 232);
+}
+
+td.tdPosition,
+td.tdName,
+td.tdPoints {
+  font-weight: bold;
+}
+
+.bigTable td.tdName {
+  text-overflow: ellipsis;
+  width: 100px;
+}
+
+/* td.tdPoints {
+  position: absolute;
+  left: 200px;
+} */
 
 /* footer */
 
