@@ -278,6 +278,7 @@ main {
   text-align: center;
   cursor: pointer;
   background-color: rgba(241, 241, 241, 1);
+  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%), 0px 2px 3px rgb(13 96 111 / 16%);
 }
 
 .scheduleMiniButton {
@@ -316,7 +317,7 @@ main {
 }
 
 .tableMiniLi:first-child .playerCard {
-  background-color: rgb(232, 211, 39);
+  background-color: rgb(142, 209, 171);
 }
 
 .tableMiniLi {
@@ -455,7 +456,7 @@ margin-left: auto;
 }
 
 .bigTable tr:hover {
-  background-color: rgb(232, 211, 39);
+  background-color: rgb(212, 232, 139);
 }
 
 .bigTable td.tdName {
@@ -463,12 +464,12 @@ margin-left: auto;
 }
 
 .bigTable tr:first-child {
-  background-color: rgb(232, 211, 39);
+  background-color: rgb(212, 232, 139);
 }
 
 
 tr.myTr {
-  background-color: rgb(39, 207, 232);
+  background-color: rgb(142, 209, 171);
 }
 
 td.tdPosition,
@@ -507,6 +508,252 @@ footer {
   cursor: pointer;
 }
 
+/* -------------------------------------- popups */
+
+.backgroundBlur {
+  z-index: 200;
+  position: fixed;
+  display: flex;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(241, 241, 241, 0);
+  visibility: hidden;
+  opacity: 0;
+  transition: .5s;
+}
+
+.backgroundBlur.active {
+  visibility: visible;
+  opacity: 1;
+  background-color: rgba(241, 241, 241, 0.5);
+  backdrop-filter: blur(4px);
+}
+
+.popupContainer {
+  z-index: 201;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(241, 241, 241, 0);
+  transition: .5s;
+  transform: scale(0);
+  opacity: 0;
+}
+
+.popupContainer.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.popup {
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  max-width: 800px;
+  height: 404px;
+  width: 100%;
+  border-radius: 30px;
+  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%), 0px 2px 3px rgb(13 96 111 / 16%);
+}
+
+.loginRegister {
+  background-color: rgba(98, 13, 41, 1);
+  height: 100%;
+  width: 100%;
+  transition: .3s;
+  order: 1;
+}
+
+.popupContainer.register .loginRegister {
+  transform: translate(100%, 0px);
+}
+
+.changePopup {
+  background-color: rgb(241, 241, 241);
+  height: 100%;
+  width: 100%;
+  transition: .3s;
+  order: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popupContainer.register .changePopup {
+  transform: translate(-100%, 0px);
+}
+
+.loginForm {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 30px;
+}
+
+.loginTitle {
+  color: rgb(241, 241, 241);
+  transition: 0.5s;
+  overflow: hidden;
+  height: 49px;
+}
+
+.loginTitle.register {
+  overflow: hidden;
+  height: 0;
+  opacity: 0;
+  visibility: 0;
+}
+
+.popupContainer.register .loginTitle.register {
+  overflow: hidden;
+  height: 49px;
+  opacity: 1;
+  visibility: 1;
+}
+
+.popupContainer.register .loginTitle.hello {
+  height: 0;
+  opacity: 0;
+  visibility: 0;
+}
+
+.changePopupTitle {
+  display: block;
+  text-align: center;
+  transition: .5s;
+  overflow: hidden;
+  opacity: 1;
+  visibility: 1;
+  height: 45px;
+}
+
+.changePopupTitle.have {
+  opacity: 0;
+  visibility: 0;
+  height: 0px;
+}
+
+.popupContainer.register .changePopupTitle.have {
+  opacity: 1;
+  visibility: 1;
+  height: 90px;
+}
+
+.popupContainer.register .changePopupTitle.dontHave {
+  opacity: 0;
+  visibility: 0;
+  height: 0px; 
+}
+
+.loginButtonText {
+  display: block;
+  overflow: hidden;
+  transition: .5s;
+  height: 100%;
+}
+
+.signUpText {
+  opacity: 0;
+  visibility: 0;
+  height: 0px;
+}
+
+.popupContainer.register .signUpText {
+  opacity: 1;
+  visibility: 1;
+  height: 100%;
+}
+
+.popupContainer.register .registerText {
+  opacity: 0;
+  visibility: 0;
+  height: 0px;
+}
+
+.formSpan {
+  color: rgb(241, 241, 241);
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.loginFormInput {
+  width: 100%;
+  border-radius: 7px;
+  border: none;
+  outline: none;
+  text-align: center;
+  cursor: pointer;
+  background-color: rgba(241, 241, 241, 1);
+  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%), 0px 2px 3px rgb(13 96 111 / 16%);
+  padding: 5px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.formContainer {
+  margin-top: 15px;
+  width: 100%;
+}
+
+.loginContainer {
+  margin-top: auto;
+}
+
+.popupContainer.register .loginContainer {
+  margin-top: 0px;
+}
+
+.passwordContainer {
+  margin-bottom: auto;
+}
+
+.bigWhiteButton.loginFormButton {
+  background-color: rgb(212, 232, 139);
+  margin-top: auto;
+  height: 50px;
+  overflow: hidden;
+}
+
+.emailContainer {
+  overflow: hidden;
+  height: 0;
+  visibility: 0;
+  opacity: 0;
+  transition: .5s;
+}
+
+.popupContainer.register .emailContainer {
+  height: 63px;
+  visibility: 1;
+  opacity: 1;
+  transition: .5s;
+}
+
+.changePopupContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+
+.changePopupButton.bigWhiteButton {
+  background-color: rgb(142, 209, 171);
+  height: 50px;
+  overflow: hidden;
+}
+
 /* blocks */
 
 .miniBlock {
@@ -529,6 +776,7 @@ footer {
   width: 100%;
   font-weight: bold;
   padding: 0px 20px;
+  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%), 0px 2px 3px rgb(13 96 111 / 16%);
 }
 
 .playerCard {
@@ -540,20 +788,21 @@ footer {
   width: 100%;
   font-weight: bold;
   padding: 0px 20px;
+  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%), 0px 2px 3px rgb(13 96 111 / 16%);
 }
 
 .myPlayerCard {
-  background-color: rgb(39, 207, 232);
+  background-color: rgb(212, 232, 139);
 }
 
 .firstPlace {
-  background-color: rgb(232, 211, 39);
+  background-color: rgb(142, 209, 171);
 }
 
 /* buttons */
 
 .bigRedButton {
-  background-color: rgba(98, 13, 42, 1);
+  background-color: #610d29;
   color: rgb(241, 241, 241);
   padding: 10px 30px;
   border-radius: 20px;
@@ -567,7 +816,7 @@ footer {
 }
 
 .bigRedButton:hover {
-  background-color: rgb(232, 211, 39);
+  background-color: rgb(212, 232, 139);
   color: rgb(98, 13, 42);
   transform: scale(0.9);
 }
@@ -588,7 +837,7 @@ footer {
 }
 
 .bigWhiteButton:hover {
-  background-color: rgb(232, 211, 39);
+  background-color: rgb(212, 232, 139);
   transform: scale(0.9);
 }
 
