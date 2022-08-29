@@ -7,34 +7,40 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@300;400;500;600;700;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
     rel="stylesheet">
-  <link rel="icon" href="../qatar2022/pictures/qatar_logo_mini.png">
-  <link rel="stylesheet" href="../qatar2022/css/flag-icon.css">
-  <link rel="stylesheet" href="../qatar2022/css/icon-font.css">
-  <link rel="stylesheet" href="../qatar2022/css/owfont-regular.css">
-  <link rel="stylesheet" href="../qatar2022/css/style_1440.css">
+  <link rel="icon" href="assets/img/qatar_logo_mini.png">
+  <link rel="stylesheet" href="assets/css/flag-icon.css">
+  <link rel="stylesheet" href="assets/css/icon-font.css">
+  <link rel="stylesheet" href="assets/css/owfont-regular.css">
+  <link rel="stylesheet" href="assets/css/style_1440.css">
   <title>Qatar 2022</title>
 </head>
+
 <body>
   <div class="bodyWrapper">
     <header class="header">
       <div class="headerContainer container">
         <div class="headerLogo">
-          <img src="../qatar2022/pictures/qatar_logo.png" alt="qatar logo" height="60">
+          <img src="./assets/img/qatar_logo.png" alt="qatar logo" height="60">
         </div>
         <nav class="nav">
           <ul class="navUl">
             <li class="navLi animationLinks">
-              <a href="#">Home</a></li>
+              <a href="#">Home</a>
+            </li>
             <li class="navLi animationLinks">
-              <a href="#matchday">MATCHDAY</a></li>
+              <a href="#matchday">MATCHDAY</a>
+            </li>
             <li class="navLi animationLinks">
-              <a href="#table">Table</a></li>
+              <a href="#table">Table</a>
+            </li>
             <li class="navLi animationLinks">
-              <a href="#">Schedule</a></li>
+              <a href="#">Schedule</a>
+            </li>
             <li class="navLi animationLinks">
-              <a href="#">World Cup</a></li>
+              <a href="#">World Cup</a>
+            </li>
           </ul>
         </nav>
         <div class="loginButton bigRedButton">
@@ -43,8 +49,8 @@
       </div>
     </header>
     <main class="main">
-      <div class="mainContainer container">
-        <section id="home" class="helloSection">
+      <section id="home" class="helloSection">
+        <div class="helloSectionContainer container">
           <div class="leftColumn">
             <div class="deadlineBlock">
               <h1 class="deadlineTitle">
@@ -67,108 +73,224 @@
             </div>
           </div>
           <div class="rightColumn">
+
+            <!--- NEXT MATCHES TABLE --->
+
             <div class="rightColumnSection section1">
-              <h2 class="scheduleMiniBlockHeader">
-                NEXT MATCHES
-              </h2>
-              <form class="scheduleMiniBlock miniBlock" name="scheduleMini">
+              <div class="rightColumnSectionTitle">
+                <h2 class="scheduleMiniBlockHeader">
+                  NEXT MATCHES
+                </h2>
                 <div class="scheduleMiniDate">
-                  <span class="nextDate">22 November 2022</span>
+                  20 November 2022
                 </div>
+              </div>
+             
+              <form class="scheduleMiniBlock miniBlock" name="scheduleMini" action="insert_action_bets.cfm"
+                method="post">
                 <ul class="scheduleMiniUl">
-                  <li class="scheduleLi">
 
-<!-- 1st match  my bet -->
-                    
-                    <div class="matchCard">
-                      <div class="matchCardCenterBlock">
-                        <div class="firstTeamMini teamBlock">
-                          <span class="flag-icon flag-icon-gb-eng"></span> <span class="team">England</span>
-                        </div>
-                        <div class="scoreMini">
-                          <input class="scoreInput" type="number">
-                          <input class="scoreInput" type="number">
-                        </div>
-                        <div class="secondTeamMini teamBlock">
-                          <span class="team">Iran</span>
-                          <span class="flag-icon flag-icon-ir"></span>
-                        </div>
-                      </div>
-                      <div class="matchCardBottomBlock">
-                        <span class="matchInfo">Group B</span>
-                        <span class="matchTime">19:00</span>
-                        <span class="matchDate">22.11.22</span>
-                      </div>
-                    </div>
+                  <!-- 1st match  my bet -->
+                  <cfset myVar="2022-08-28">
 
-                    
-                  </li>
-                  <li class="scheduleLi">
 
-<!-- 2nd match  my bet -->
+                    <cfquery name="Match1" datasource="test">
+                      SELECT *
+                      FROM world.`results` WHERE match_id = 1 ;
+                    </cfquery>
 
-                    <div class="matchCard">
-                      <div class="matchCardCenterBlock">
+
+
+                    <li class="scheduleLi">
+                      <div class="matchCard matchCardToBet">
+                        <div class="matchCardCenterBlock">
                           <div class="firstTeamMini teamBlock">
-                          <span class="flag-icon flag-icon-sn"></span> <span class="team">Senegal</span>
+                            <span class="team">
+                              <cfif dateDiff("d", myVar ,now()) EQ 0>
+                                <cfoutput query="Match1">#Team1#</cfoutput>
+                              </cfif>
+                            </span>
+                          </div>
+                          <table class="scoreMini">
+                            <tbody>
+                              <tr>
+                                <td>
+                                  <input name="GolQua1" maxlength="1" class="scoreInput" type="number">
+                                </td>
+                                <td>
+                                  <input name="GolEcu1" maxlength="1" class="scoreInput" type="number">
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          <div class="secondTeamMini teamBlock">
+                            <span class="team">
+                              <cfif dateDiff("d", myVar ,now()) EQ 0>
+                                <cfoutput query="Match1">#Team2#</cfoutput>
+                              </cfif>
+                            </span>
+                          </div>
                         </div>
-                        <div class="scoreMini">
-                          <input class="scoreInput" type="number">
-                          <input class="scoreInput" type="number">
-                        </div>
-                        <div class="secondTeamMini teamBlock">
-                          <span class="team">Netherlands</span>
-                          <span class="flag-icon flag-icon-nl"></span>
-                        </div>
-                      </div>
-                      <div class="matchCardBottomBlock">
-                        <span class="matchInfo">Group A</span>
-                        <span class="matchTime">22:00</span>
-                        <span class="matchDate">22.11.22</span>
-                      </div>
-                    </div>
-
-
-                  </li>
-                  <li class="scheduleLi">
-
-<!-- 3rd match my bet -->
-
-                    <div class="matchCard">
-                      <div class="matchCardCenterBlock">
-                        <div class="firstTeamMini teamBlock">
-                          <span class="flag-icon flag-icon-us"></span>
-                          <span class="team">USA</span>
-                        </div>
-                        <div class="scoreMini">
-                          <input class="scoreInput" type="number">
-                          <input class="scoreInput" type="number">
-                        </div>
-                        <div class="secondTeamMini teamBlock">
-                          <span class="team">Wales</span>
-                          <span class="flag-icon flag-icon-gb-wls"></span>
+                        <div class="matchCardBottomBlock">
+                          <span class="matchInfo">group a</span>
+                          <span class="timeAndDateFromVal">10:00</span>
                         </div>
                       </div>
-                      <div class="matchCardBottomBlock">
-                        <span class="matchInfo">Group B</span>
-                        <span class="matchTime">01:00</span>
-                        <span class="matchDate">23.11.22</span>
-                      </div>
-                    </div>
+                    </li>
+
+                    <!-- 2nd match  my bet -->
+                    <!--- server's time dump --->
+                    <!---  <cfset DateToday = "#now()#">
+                 <cfdump var = "#DateToday#"> --->
 
 
+                    <cfset MyVar2="2022-08-27 20:31">
 
-                  </li>
+                      <cfquery name="Match2" datasource="test">
+                        SELECT *
+                        FROM world.`results` WHERE match_id = 2 ;
+                      </cfquery>
+
+                      <li class="scheduleLi">
+                        <div class="matchCard matchCardToBet">
+                          <div class="matchCardCenterBlock">
+                            <div class="firstTeamMini teamBlock">
+                              <span class="team">
+                                <cfif dateDiff("n", myVar2 ,now()) GT 0>
+                                  <cfoutput query="Match2">#Team1#</cfoutput>
+                                </cfif>
+                              </span>
+                            </div>
+                            <table class="scoreMini">
+                              <tbody>
+                                <tr>
+                                  <td>
+                                    <input name="GolEng1" maxlength="1" class="scoreInput" type="number">
+                                  </td>
+                                  <td>
+                                    <input name="GolIra1" maxlength="1" class="scoreInput" type="number">
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                            <div class="secondTeamMini teamBlock">
+                              <span class="team">
+                                <cfif dateDiff("n", myVar2 ,now()) GT 0>
+                                  <cfoutput query="Match2">#Team2#</cfoutput>
+                                </cfif>
+                              </span>
+                            </div>
+                          </div>
+                          <div class="matchCardBottomBlock">
+                            <span class="matchInfo"></span>
+                            <span class="timeAndDateFromVal"></span>
+                          </div>
+                        </div>
+                      </li>
+
+                      <!-- 3rd match my bet -->
+
+                      <cfquery name="Match3" datasource="test">
+                        SELECT *
+                        FROM world.`results` WHERE match_id = 3 ;
+                      </cfquery>
+
+                      <li class="scheduleLi">
+                        <div class="matchCard matchCardToBet">
+                          <div class="matchCardCenterBlock">
+                            <div class="firstTeamMini teamBlock">
+                              <span class="team">
+                                <cfif dateDiff("n", myVar2 ,now()) GT 0>
+                                  <cfoutput query="Match3">#Team1#</cfoutput>
+                                </cfif>
+                              </span>
+                            </div>
+                            <table class="scoreMini">
+                              <tbody>
+                                <tr>
+                                  <td>
+                                    <input name="GolSen1" maxlength="1" class="scoreInput" type="number">
+                                  </td>
+                                  <td>
+                                    <input name="GolNet1" maxlength="1" class="scoreInput" type="number">
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                            <div class="secondTeamMini teamBlock">
+                              <span class="team">
+                                <cfif dateDiff("n", myVar2 ,now()) GT 0>
+                                  <cfoutput query="Match3">#Team2#</cfoutput>
+                                </cfif>
+                              </span>
+                            </div>
+                          </div>
+                          <div class="matchCardBottomBlock">
+                            <span class="matchInfo"></span>
+                            <span class="timeAndDateFromVal"></span>
+                          </div>
+                        </div>
+                      </li>
+
+                      <!-- 4rd match my bet -->
+
+                      <cfquery name="Match4" datasource="test">
+                        SELECT *
+                        FROM world.`results` WHERE match_id = 4 ;
+                      </cfquery>
+
+                      <li class="scheduleLi">
+                        <div class="matchCard matchCardToBet">
+                          <div class="matchCardCenterBlock">
+                            <div class="firstTeamMini teamBlock">
+                              <span class="team">
+                                <cfif dateDiff("n", myVar2 ,now()) GT 0>
+                                  <cfoutput query="Match4">#Team1#</cfoutput>
+                                </cfif>
+                              </span>
+                            </div>
+                            <table class="scoreMini">
+                              <tbody>
+                                <tr>
+                                  <td>
+                                    <input name="GolUSA1" maxlength="1" class="scoreInput" type="number">
+                                  </td>
+                                  <td>
+                                    <input name="GolWal1" maxlength="1" class="scoreInput" type="number">
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                            <div class="secondTeamMini teamBlock">
+                              <span class="team">
+                                <cfif dateDiff("n", myVar2 ,now()) GT 0>
+                                  <cfoutput query="Match4">#Team2#</cfoutput>
+                                </cfif>
+                              </span>
+                            </div>
+                          </div>
+                          <div class="matchCardBottomBlock">
+                            <span class="matchInfo"></span>
+                            <span class="timeAndDateFromVal"></span>
+                          </div>
+                        </div>
+                      </li>
+
                 </ul>
-                <button class="bigWhiteButton scheduleMiniButton" type="submit" form="scheduleMini">
-                  Save
-                </button>
+                <td><input class="bigWhiteButton" id="nextMatchesSubmit" type="Submit" value="Save"></td>
               </form>
             </div>
+
+            <!--- --->
+
+
+
             <div class="rightColumnSection">
-              <h2>
-                TABLE
-              </h2>
+              <div class="rightColumnSectionTitle">
+                <h2 class="scheduleMiniBlockHeader">
+                  TABLE
+                </h2>
+              </div>
               <div class="tableMini miniBlock">
                 <ul class="tableMiniUl">
                   <li class="tableMiniLi">
@@ -177,10 +299,17 @@
                         1
                       </div>
                       <div class="playerNameMini">
-                        Player 1
+                        <cfquery name="player1" datasource="test">
+                          SELECT *
+                          FROM world.`total points`
+                          ORDER BY points DESC LIMIT 1
+                        </cfquery>
+                        <cfoutput query="player1">#username#
+                        </cfoutput>
                       </div>
                       <div class="playerPointsMini">
-                        30
+                        <cfoutput query="player1">#points#
+                        </cfoutput>
                       </div>
                     </div>
                   </li>
@@ -190,10 +319,17 @@
                         2
                       </div>
                       <div class="playerNameMini">
-                        Player 2
+                        <cfquery name="player2" datasource="test">
+                          SELECT *
+                          FROM world.`total points`
+                          ORDER BY points DESC LIMIT 1,1;
+                        </cfquery>
+                        <cfoutput query="player2">#username#
+                        </cfoutput>
                       </div>
                       <div class="playerPointsMini">
-                        25
+                        <cfoutput query="player2">#points#
+                        </cfoutput>
                       </div>
                     </div>
                   </li>
@@ -203,10 +339,17 @@
                         3
                       </div>
                       <div class="playerNameMini">
-                        Me
+                        <cfquery name="player3" datasource="test">
+                          SELECT *
+                          FROM world.`total points`
+                          ORDER BY points DESC LIMIT 2,1;
+                        </cfquery>
+                        <cfoutput query="player3">#username#
+                        </cfoutput>
                       </div>
                       <div class="playerPointsMini">
-                        24
+                        <cfoutput query="player3">#points#
+                        </cfoutput>
                       </div>
                     </div>
                   </li>
@@ -216,10 +359,17 @@
                         4
                       </div>
                       <div class="playerNameMini">
-                        Player 4
+                        <cfquery name="player4" datasource="test">
+                          SELECT *
+                          FROM world.`total points`
+                          ORDER BY points DESC LIMIT 3,1;
+                        </cfquery>
+                        <cfoutput query="player4">#username#
+                        </cfoutput>
                       </div>
                       <div class="playerPointsMini">
-                        20
+                        <cfoutput query="player4">#points#
+                        </cfoutput>
                       </div>
                     </div>
                   </li>
@@ -229,10 +379,17 @@
                         5
                       </div>
                       <div class="playerNameMini">
-                        Player 5
+                        <cfquery name="player5" datasource="test">
+                          SELECT *
+                          FROM world.`total points`
+                          ORDER BY points DESC LIMIT 4,1;
+                        </cfquery>
+                        <cfoutput query="player5">#username#
+                        </cfoutput>
                       </div>
                       <div class="playerPointsMini">
-                        15
+                        <cfoutput query="player5">#points#
+                        </cfoutput>
                       </div>
                     </div>
                   </li>
@@ -240,36 +397,41 @@
               </div>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
+        <!-- Matchday -->
+
         <section class="matchdaySection" id="matchday">
           <h1 class="matchdayTitle">
             MATCHDAY
           </h1>
-          <div class="matchdayBlock">
+          <div class="matchdayBlock container">
 
-<!-- 1st event start -->
+            <!-- 1st event start -->
 
             <div class="matchDayEvent">
-              <div class="matchCard">
-                <div class="matchCardBottomBlock">
-                  <span class="matchInfo">Group B</span>
-                  <span class="matchTime">19:00</span>
-                  <span class="matchDate">22.11.22</span>
-                </div>
-                <div class="matchCardCenterBlock">
-                  <div class="firstTeamMini teamBlock">
-                    <span class="flag-icon flag-icon-gb-eng"></span> <span class="team">England</span>
+
+              <div class="matchDayEventHeader">
+                <section class="scoreSection">
+                  <div class="eventTeam eventFirstTeam">
+                    Qatar
                   </div>
-                  <div class="scoreMini">
-                    <div class="scoreInput" type="number"></div>
-                    <div class="scoreInput" type="number"></div>
+                  <div class="eventScore">
+                    <span class="eventFirstTeamScore">0</span>
+                    <span>-</span>
+                    <span class="eventSecondTeamScore">0</span>
                   </div>
-                  <div class="secondTeamMini teamBlock">
-                    <span class="team">Iran</span>
-                    <span class="flag-icon flag-icon-ir"></span>
+                  <div class="eventTeam eventFirstTeam">
+                  Ecuador
                   </div>
-                </div>
+                </section>
+                <section class="eventInfoSection">
+                  <span class="eventGroup eventInfo">Group A</span>
+                  <span class="eventTime eventInfo">13:00</span>
+                  <span class="eventDate eventInfo">20.11.22</span>
+                </section>
               </div>
+
               <ul class="playersBetsUl">
                 <li class="playersBetsLi">
                   <div class="playerBetCard">
@@ -369,31 +531,32 @@
               </ul>
             </div>
 
-<!-- 1st event end -->
-
-<!-- 2nd event start -->
+            <!-- 1st event end -->
+            <!-- 2nd event start -->
 
             <div class="matchDayEvent">
-              <div class="matchCard">
-                <div class="matchCardBottomBlock">
-                  <span class="matchInfo">Group A</span>
-                  <span class="matchTime">22:00</span>
-                  <span class="matchDate">22.11.22</span>
-                </div>
-                <div class="matchCardCenterBlock">
-                  <div class="firstTeamMini teamBlock">
-                    <span class="flag-icon flag-icon-sn"></span> <span class="team">Senegal</span>
+            
+              <div class="matchDayEventHeader">
+                <section class="scoreSection">
+                  <div class="eventTeam eventFirstTeam">
+                    England
                   </div>
-                  <div class="scoreMini">
-                    <input class="scoreInput" type="number">
-                    <input class="scoreInput" type="number">
+                  <div class="eventScore">
+                    <span class="eventFirstTeamScore">0</span>
+                    <span>-</span>
+                    <span class="eventSecondTeamScore">0</span>
                   </div>
-                  <div class="secondTeamMini teamBlock">
-                    <span class="team">Netherlands</span>
-                    <span class="flag-icon flag-icon-nl"></span>
+                  <div class="eventTeam eventFirstTeam">
+                    Iran
                   </div>
-                </div>
+                </section>
+                <section class="eventInfoSection">
+                  <span class="eventGroup eventInfo">Group B</span>
+                  <span class="eventTime eventInfo">10:00</span>
+                  <span class="eventDate eventInfo">21.11.22</span>
+                </section>
               </div>
+            
               <ul class="playersBetsUl">
                 <li class="playersBetsLi">
                   <div class="playerBetCard">
@@ -493,32 +656,32 @@
               </ul>
             </div>
 
-<!-- 2nd event end -->
-
-<!-- 3rd event start -->
+            <!-- 2nd event end -->
+            <!-- 3rd event start -->
 
             <div class="matchDayEvent">
-              <div class="matchCard">
-                <div class="matchCardBottomBlock">
-                  <span class="matchInfo">Group B</span>
-                  <span class="matchTime">01:00</span>
-                  <span class="matchDate">23.11.22</span>
-                </div>
-                <div class="matchCardCenterBlock">
-                  <div class="firstTeamMini teamBlock">
-                    <span class="flag-icon flag-icon-us"></span>
-                    <span class="team">USA</span>
+            
+              <div class="matchDayEventHeader">
+                <section class="scoreSection">
+                  <div class="eventTeam eventFirstTeam">
+                    Senegal
                   </div>
-                  <div class="scoreMini">
-                    <input class="scoreInput" type="number">
-                    <input class="scoreInput" type="number">
+                  <div class="eventScore">
+                    <span class="eventFirstTeamScore">0</span>
+                    <span>-</span>
+                    <span class="eventSecondTeamScore">0</span>
                   </div>
-                  <div class="secondTeamMini teamBlock">
-                    <span class="team">Wales</span>
-                    <span class="flag-icon flag-icon-gb-wls"></span>
+                  <div class="eventTeam eventFirstTeam">
+                    Netherlands
                   </div>
-                </div>
+                </section>
+                <section class="eventInfoSection">
+                  <span class="eventGroup eventInfo">Group A</span>
+                  <span class="eventTime eventInfo">13:00</span>
+                  <span class="eventDate eventInfo">21.11.22</span>
+                </section>
               </div>
+            
               <ul class="playersBetsUl">
                 <li class="playersBetsLi">
                   <div class="playerBetCard">
@@ -618,13 +781,141 @@
               </ul>
             </div>
 
-<!-- 3rd event end -->
+            <!-- 3rd event end -->
+            <!-- 4th event start -->
+
+            <div class="matchDayEvent">
+            
+              <div class="matchDayEventHeader">
+                <section class="scoreSection">
+                  <div class="eventTeam eventFirstTeam">
+                    USA
+                  </div>
+                  <div class="eventScore">
+                    <span class="eventFirstTeamScore">0</span>
+                    <span>-</span>
+                    <span class="eventSecondTeamScore">0</span>
+                  </div>
+                  <div class="eventTeam eventFirstTeam">
+                    Wales
+                  </div>
+                </section>
+                <section class="eventInfoSection">
+                  <span class="eventGroup eventInfo">Group B</span>
+                  <span class="eventTime eventInfo">16:00</span>
+                  <span class="eventDate eventInfo">21.11.22</span>
+                </section>
+              </div>
+            
+              <ul class="playersBetsUl">
+                <li class="playersBetsLi">
+                  <div class="playerBetCard">
+                    <div class="scoreMini">
+                      <div class="scoreInput" type="number"></div>
+                      <div class="scoreInput" type="number"></div>
+                    </div>
+                    <div class="playerCard myPlayerCard">
+                      <div class="playerPosition">
+                        3
+                      </div>
+                      <div class="playerNameMini">
+                        Me
+                      </div>
+                      <div class="playerPointsMini">
+                        24
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="playersBetsLi">
+                  <div class="playerBetCard">
+                    <div class="scoreMini">
+                      <div class="scoreInput" type="number"></div>
+                      <div class="scoreInput" type="number"></div>
+                    </div>
+                    <div class="playerCard firstPlace">
+                      <div class="playerPosition">
+                        1
+                      </div>
+                      <div class="playerNameMini">
+                        Player 1
+                      </div>
+                      <div class="playerPointsMini">
+                        30
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="playersBetsLi">
+                  <div class="playerBetCard">
+                    <div class="scoreMini">
+                      <div class="scoreInput" type="number"></div>
+                      <div class="scoreInput" type="number"></div>
+                    </div>
+                    <div class="playerCard">
+                      <div class="playerPosition">
+                        2
+                      </div>
+                      <div class="playerNameMini">
+                        Player 2
+                      </div>
+                      <div class="playerPointsMini">
+                        25
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="playersBetsLi">
+                  <div class="playerBetCard">
+                    <div class="scoreMini">
+                      <div class="scoreInput" type="number"></div>
+                      <div class="scoreInput" type="number"></div>
+                    </div>
+                    <div class="playerCard">
+                      <div class="playerPosition">
+                        4
+                      </div>
+                      <div class="playerNameMini">
+                        Player 4
+                      </div>
+                      <div class="playerPointsMini">
+                        20
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="playersBetsLi">
+                  <div class="playerBetCard">
+                    <div class="scoreMini">
+                      <div class="scoreInput" type="number"></div>
+                      <div class="scoreInput" type="number"></div>
+                    </div>
+                    <div class="playerCard">
+                      <div class="playerPosition">
+                        5
+                      </div>
+                      <div class="playerNameMini">
+                        Player 5
+                      </div>
+                      <div class="playerPointsMini">
+                        15
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <!-- 4th event end -->
 
           </div>
         </section>
+
+        <!-- TABLE -->
+
         <section class="tableSection" id="table">
           <h1 class="tableTitle">
-            Table
+            TABLE
           </h1>
           <div class="mainTable">
             <table class="bigTable">
@@ -803,12 +1094,12 @@
   <div class="popup">
     <div class="loginRegister">
       <form class="loginForm" name="loginForm">
-        <h2 class="loginTitle hello">
+        <h3 class="loginTitle hello">
           Hello!
-        </h2>
-        <h2 class="loginTitle register">
+        </h3>
+        <h3 class="loginTitle register">
           Register
-        </h2>
+        </h3>
         <div class="loginContainer formContainer">
           <span class="formSpan">Login</span>
           <input class="loginInput loginFormInput" type="text" name="loginInput">
@@ -829,12 +1120,12 @@
     </div>
     <div class="changePopup">
       <div class="changePopupContainer">
-        <h2 class="changePopupTitle dontHave">
+        <h3 class="changePopupTitle dontHave">
           Don't have an account?
-        </h2>
-        <h2 class="changePopupTitle have">
+        </h3>
+        <h3 class="changePopupTitle have">
           Already have an account?
-        </h2>
+        </h3>
         <button class="changePopupButton bigWhiteButton">
           <span class="loginButtonText registerText">Register</span>
           <span class="loginButtonText signUpText">Sign In</span>
@@ -844,6 +1135,16 @@
   </div>
 </div>
 
+<!--- info --->
+
+<div id="infoContainer" class="infoContainer">
+  <div class="infoAlert">
+    <div class="infoTextBlock">
+       <span id="infoText" class="infoText"></span>
+    </div>
+    <div class="okButton bigRedButton">Ok</div>
+  </div>
+</div>
 
 <!-- backgrounds covers -->
 <div class="backgroundBlur">
@@ -851,6 +1152,6 @@
 </div>
 
 
-<script src="../qatar2022/js/index.js" type="module"></script>
+<script src="assets/js/index.js" type="module"></script>
 </body>
 </html>
