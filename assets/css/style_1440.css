@@ -7,6 +7,10 @@
   scroll-behavior: smooth;
 }
 
+cfquery {
+  display: none;
+}
+
 a {
   text-decoration: none;
 }
@@ -42,12 +46,12 @@ h1 {
 }
 
 h2 {
-  font-size: 30px;
-  font-weight: 700;
+  font-size: 40px;
+  font-weight: 800;
 }
 
 h3 {
-  font-size: 25px;
+  font-size: 30px;
   font-weight: 600;
 }
 
@@ -57,10 +61,6 @@ h3 {
   margin: 0 auto;
   height: 100%;
   max-width: 1440px;
-  background-image: url(/qatar2022/pictures/qatar_logo_big.jpeg);
-  background-attachment: local;
-  background-size: cover;
-  background-position: 100% 0%;
 }
 
 .container {
@@ -81,7 +81,7 @@ header {
   width: 100%;
   height: 90px;
   background-color: rgba(241, 241, 241, 0.85);
-  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%), 0px 2px 3px rgb(13 96 111 / 16%);
+  box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;
   z-index: 100;
 }
 
@@ -122,29 +122,38 @@ main {
   position: relative;
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
-.mainContainer {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-}
 
 /* ------------------------------------ hello section */
 
 .helloSection {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
+  width: 100%;
+  background-image: url(../img/qatar_logo_big.jpeg);
+  background-size: cover;
+  background-position: 100% 0%;
+}
+
+.helloSectionContainer {
+  position: relative;
+  height: 100%;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  height: 1100px;
+  padding-bottom: 250px;
 }
 
 /* leftColumn */
 
 .leftColumn {
-  height: 100%;
+  position: relative;
+
 }
 
 .deadlineBlock {
@@ -153,10 +162,10 @@ main {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  top: 90px;
-  margin-top: 384px;
-  padding: 30px;
-  width: 360px;
+  top: 100px;
+  margin-top: 450px;
+  width: 300px;
+  background:none;
 }
 
 .deadlineTitle {
@@ -188,7 +197,7 @@ main {
   color: rgb(241, 241, 241);
   font-weight: 900;
   background-color: rgb(98, 13, 42);
-  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%), 0px 2px 3px rgb(13 96 111 / 16%);
+  box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;
   border-radius: 15px;
   width: 90px;
   height: 90px;
@@ -202,7 +211,8 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 40px;
+  gap: 70px;
+  height: 100%;
 }
 
 .rightColumnSection {
@@ -210,7 +220,10 @@ main {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  gap: 10px;
+  background-color: #610d29;
+  border-radius: 30px;
+  box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;
+  overflow: hidden;
 }
 
 .section1 {
@@ -219,15 +232,21 @@ main {
 
 /* scheduleMiniBlock */
 
-.scheduleMiniDate {
+.rightColumnSectionTitle {
+  border-radius: 30px;
+  background-color: rgb(241, 241, 241);
+  width: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-bottom: 20px;
-  background-color: rgba(241, 241, 241, 1);
-  border-radius: 10px;
-  min-height: 40px;
-  width: 250px;
+  padding: 25px 0px;
+  box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;
+}
+
+
+.scheduleMiniDate {
+  width: 100%;
   font-weight: bold;
   text-align: center;
 }
@@ -255,18 +274,39 @@ main {
   width: 250px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: 10px;
   padding-left: 20px;
   padding-right: 20px;
 }
 
+.scheduleLi {
+  overflow: hidden;
+  height: 86px;
+  opacity: 1;
+  visibility: 1;
+  transition: 0.3s;
+}
+
+.scheduleLi.hide {
+display: none;
+}
+
 .scoreMini {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 80px;
+  border-spacing: 0px;
+}
+.scoreMini tbody {
+  width: 100%;
+}
 
+.scoreMini tbody tr {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
 .scoreInput {
@@ -278,7 +318,7 @@ main {
   text-align: center;
   cursor: pointer;
   background-color: rgba(241, 241, 241, 1);
-  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%), 0px 2px 3px rgb(13 96 111 / 16%);
+  box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;
 }
 
 .scheduleMiniButton {
@@ -293,12 +333,13 @@ main {
 
 }
 
-.matchDate,
 .matchTime,
-.matchInfo {
+.matchInfo,
+.timeAndDateFromVal {
   font-size: 14px;
   color: rgb(241, 241, 241);
 }
+
 
 /* tableMini */
 
@@ -338,32 +379,112 @@ margin-left: auto;
 /* ------------------------------------ MATCHDAY section */
 
 .matchdaySection {
-  background-color: rgba(98, 13, 42, 1);
-  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%), 0px 2px 3px rgb(13 96 111 / 16%);
-  padding: 30px;
-  border-radius: 30px;
-  margin: 80px 0px;
+  background-color: rgb(241, 241, 241);
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 100px;
 }
 
 .matchdayTitle {
+  text-align: center;
+  z-index: 1;
+  background-color: #610d29;
+  border-radius: 100px;
+  margin-top: -100px;
+  padding: 50px;
+  width: 100%;
   color: rgba(241, 241, 241, 1);
+  box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;
+  margin-bottom: 120px;
 }
 
 .matchdayBlock {
   display: flex;
   width: 100%;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
+  gap: 50px;
   flex-wrap: wrap;
-  gap: 40px;
+  padding-bottom: 100px;
+
 }
 
 .matchDayEvent {
+  background-color: rgba(241, 241, 241, 1);
+  border-radius: 30px;
+  box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;
   width: 500px;
+  background-color: #610d29;
+}
+
+.matchDayEventHeader {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(241, 241, 241);
+  border-radius: 30px;
+  padding: 15px 5px;
+}
+
+.scoreSection {
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.eventInfoSection {
+  width: 100%;
+  gap: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.eventTeam {
+  font-size: 22px;
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
+  padding: 0px 5px;
+}
+
+.eventInfo {
+  font-size: 14px;
+  font-weight: bold;
+  display: block;
+  color: #610d29;
+}
+
+.eventGroup {
+  text-align: end;
+}
+
+
+.eventGroup,
+.eventDate {
+  width: 40%;
+}
+
+.eventScore {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 80px;
+  width: 150px;
+  text-align: center;
+}
+
+.eventScore span {
+  display: block;
+  font-size: 70px;
+  font-family: 'Azeret Mono', monospace;
+  font-weight: 800;
+  text-align: center;
 }
 
 .matchDayEvent .matchCardBottomBlock {
@@ -377,17 +498,16 @@ margin-left: auto;
 }
 
 .playersBetsUl {
-  padding-top: 10px;
-}
-
-.playersBetsLi {
-  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 30px ;
+  gap: 20px;
 }
 
 .matchDayEvent .teamBlock,
 .playerBetCard .playerCard {
-  width: 200px;
-  padding: 0px 10px;
+  width: 100%;
+  padding: 0px, 20px;
 }
 
 .matchDayEvent .team,
@@ -399,6 +519,15 @@ margin-left: auto;
 
 .playerBetCard .playerNameMini {
   padding-left: 10px;
+}
+
+.firstTeamMini {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.firstTeamMini span {
+  display: block;
 }
 
 .matchDayEvent .scoreMini,
@@ -414,7 +543,7 @@ margin-left: auto;
   display: flex;
   align-items: center;
   justify-content: end;
-  gap: 10px;
+  gap: 30px;
 }
 
 /* ------------------------------------ Table section */
@@ -423,6 +552,20 @@ margin-left: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+}
+
+.tableTitle {
+  text-align: center;
+  z-index: 1;
+  background-color: rgba(241, 241, 241, 1);
+  border-radius: 100px;
+  margin-top: -100px;
+  padding: 50px;
+  width: 100%;
+  color: rgb(98, 13, 42);
+  box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;
+  margin-bottom: 100px;
 }
 
 .mainTable {
@@ -442,7 +585,7 @@ margin-left: auto;
   transition: .3s;
   cursor: pointer;
   display: flex;
-  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%), 0px 2px 3px rgb(13 96 111 / 16%);
+  box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;
   border-radius: 30px;
   margin-bottom: 10px;
 }
@@ -464,12 +607,12 @@ margin-left: auto;
 }
 
 .bigTable tr:first-child {
-  background-color: rgb(212, 232, 139);
+  background-color: rgb(142, 209, 171);
 }
 
 
 tr.myTr {
-  background-color: rgb(142, 209, 171);
+  background-color: rgb(212, 232, 139);
 }
 
 td.tdPosition,
@@ -560,7 +703,7 @@ footer {
   height: 404px;
   width: 100%;
   border-radius: 30px;
-  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%), 0px 2px 3px rgb(13 96 111 / 16%);
+  box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;
 }
 
 .loginRegister {
@@ -694,7 +837,7 @@ footer {
   text-align: center;
   cursor: pointer;
   background-color: rgba(241, 241, 241, 1);
-  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%), 0px 2px 3px rgb(13 96 111 / 16%);
+  box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;
   padding: 5px;
   font-size: 14px;
   font-weight: bold;
@@ -754,6 +897,74 @@ footer {
   overflow: hidden;
 }
 
+/* info */
+
+.infoContainer {
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(4px);
+  transition: 0.5s;
+  opacity: 0;
+  visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* transform: scale(0); */
+}
+
+.infoContainer.active {
+  opacity: 1;
+  visibility: visible;
+  /* transform: scale(1); */
+}
+
+.infoAlert {
+  background-color: rgb(142, 209, 171);
+  box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;
+  border-radius: 30px;
+  width: 350px;
+  display: flex;
+  padding: 30px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  transform: scale(0);
+  transition: 0.5s;
+}
+
+.infoContainer.active .infoAlert {
+    transform: scale(1);
+}
+
+.infoTextBlock {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.infoText {
+  font-size: 25px;
+  font-weight: 600;
+  padding: 30px 0px;
+  display: block;
+  text-align: center;
+}
+
+.okButton.bigRedButton {
+  color: rgb(142, 209, 171);
+}
+
+.okButton.bigRedButton:hover {
+  background-color: #610d29;
+  color: rgb(142, 209, 171);
+}
+
 /* blocks */
 
 .miniBlock {
@@ -761,10 +972,9 @@ footer {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  background-color: rgba(98, 13, 42, 1);
-  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%), 0px 2px 3px rgb(13 96 111 / 16%);
+  background:none;
   padding: 30px;
-  border-radius: 30px;
+
 }
 
 .teamBlock {
@@ -776,7 +986,7 @@ footer {
   width: 100%;
   font-weight: bold;
   padding: 0px 20px;
-  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%), 0px 2px 3px rgb(13 96 111 / 16%);
+  box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;
 }
 
 .playerCard {
@@ -788,7 +998,7 @@ footer {
   width: 100%;
   font-weight: bold;
   padding: 0px 20px;
-  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%), 0px 2px 3px rgb(13 96 111 / 16%);
+  box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;
 }
 
 .myPlayerCard {
@@ -801,12 +1011,13 @@ footer {
 
 /* buttons */
 
+
 .bigRedButton {
   background-color: #610d29;
   color: rgb(241, 241, 241);
   padding: 10px 30px;
   border-radius: 20px;
-  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%), 0px 2px 3px rgb(13 96 111 / 16%);
+  box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;
   cursor: pointer;
   transition: 0.3s;
   font-size: 20px;
@@ -827,7 +1038,7 @@ footer {
   color: rgb(98, 13, 42);
   padding: 10px 30px;
   border-radius: 20px;
-  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%), 0px 2px 3px rgb(13 96 111 / 16%);
+  box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;
   cursor: pointer;
   transition: 0.3s;
   font-size: 20px;
