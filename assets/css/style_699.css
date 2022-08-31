@@ -1,6 +1,5 @@
-.mobileBurger,
-li.loginMobileLink {
-display: none;
+.loginButton {
+  display: none;
 }
 
 * {
@@ -69,9 +68,8 @@ h3 {
 }
 
 .container {
-  padding: 15px;
+  padding: 15px 25px;
   max-width: 1200px;
-  min-width: 700px;
   width: 100%;
 }
 
@@ -84,21 +82,57 @@ header {
   top: 0;
   justify-content: center;
   width: 100%;
-  height: 90px;
+  height: 60px;
   background-color: rgba(241, 241, 241, 0.85);
   box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;
-  z-index: 100;
+  z-index: 9000;
 }
 
-.headerLogo {
+.headerLogo img {
   cursor: pointer;
+  height: 30px;
 }
+
+.mobileBurger {
+  height: 20px;
+  width: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 9999;
+}
+
+.str {
+  display: block;
+  background-color: #610d29;
+  border-radius: 5px;
+  height: 3px;
+  width: 100%;
+  transition: 0.3s;
+  opacity: 1;
+  transform-origin: left;
+}
+
+.mobileBurger.active .str1 {
+  transform: rotate(45deg);
+}
+
+.mobileBurger.active .str2 {
+  opacity: 0;
+}
+
+.mobileBurger.active .str3 {
+  transform: translateY(1px) rotate(-45deg);
+}
+
 
 .headerContainer {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
+    z-index: 9999;
 }
 
 .nav {
@@ -106,19 +140,36 @@ header {
   width: 100%;
   flex: 1 1 100%;
   justify-content: center;
+  z-index: 9999;
 }
 
 .navUl {
+  position: fixed;
+  flex-direction: column;
   display: flex;
   min-width: 300px;
+  width: 100%;
   justify-content: space-between;
   align-items: center;
   gap: 40px;
+  background-color: rgb(142, 209, 171);
+  z-index: 9999;
+  padding: 70px 0px 40px;
+  border-radius: 30px;
+  top: -30px;
+  left: 0;
+  transition: 0.3s;
+  transform: translateY(-150%);
+}
+
+.navUl.active {
+  transform: translateY(0px);
 }
 
 .navLi a{
   cursor: pointer;
   font-weight: bold;
+  font-size: 30px;
 }
 
 /* main */
@@ -150,28 +201,39 @@ main {
   position: relative;
   height: 100%;
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   padding-bottom: 165px;
+  flex-direction: column;
 }
 
 /* leftColumn */
 
 .leftColumn {
-  position: relative;
-
+  display: flex;
+  height: 40px;
+  position: fixed;
+  left: 0px;
+  top: 60px;
+  width: 100%;
+   z-index: 3300;
 }
 
 .deadlineBlock {
-  position: sticky;
+  flex-direction: row;
+  height: 40px;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  background-color: rgb(142, 209, 171);
+  margin-top: 0px;
+  width: 100%;
   align-items: center;
-  top: 100px;
-  margin-top: 500px;
-  width: 300px;
-  background:none;
+  justify-content: space-between;
+  padding: 0px 25px;
+  z-index: 3300;
+
+}
+
+.deadlineBlock h1 {
+  font-size: 20px;
 }
 
 .deadlineTitle {
@@ -181,34 +243,36 @@ main {
 .deadlineTime {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  width: 100%;
+  justify-content: flex-end;
+  flex-direction: row;
+  gap: 25px;
 }
 
 .deadlineSection {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  flex-direction: row;
+  gap: 10px;
 }
 
 .deadlineText {
   color: rgb(98, 13, 42);
-  font-size: 20px;
+  font-size: 16px;
   font-weight: bold;
 }
 
 .deadlineNum {
-  font-size: 55px;
-  color: rgb(241, 241, 241);
+  font-size: 14px;
+  color: rgb(142, 209, 171);
   font-weight: 900;
   background-color: rgb(98, 13, 42);
   box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;
-  border-radius: 15px;
-  width: 90px;
-  height: 90px;
+  border-radius: 5px;
+  width: 30px;
+  height: 30px;
   text-align: center;
   padding: 5px 0px;
+  line-height: 23px;
 }
 
 /* rightColumn */
