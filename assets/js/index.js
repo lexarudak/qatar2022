@@ -13,8 +13,10 @@ const infoText = document.getElementById('infoText')
 const scheduleMiniUl = document.querySelector('.scheduleMiniUl')
 const mobileBurger = document.querySelector('.mobileBurger')
 const navUl = document.querySelector('.navUl')
+const headerLogo = document.querySelector('.headerLogo')
 
 // functions
+const toggleHeaderLogo = () => headerLogo.classList.toggle('active')
 const showPopup = () => popupContainer.classList.add('active')
 const hidePopup = () => popupContainer.classList.remove('active')
 const hideInfo = () => info.classList.remove('active')
@@ -24,6 +26,7 @@ const showInfo = (text) => {
 }
 const showBackgroundCover = () => backgroundBlur.classList.add('active')
 const hideBackgroundCover = () => backgroundBlur.classList.remove('active')
+const toggleBackgroundCover = () => backgroundBlur.classList.toggle('active')
 const togglePopup = () => popupContainer.classList.toggle('register')
 
 function hideNullMatches () {
@@ -31,7 +34,6 @@ function hideNullMatches () {
     const team = value.querySelectorAll('.team')
     if (team[0].innerHTML === '') {
       value.classList.add('hide')
-      console.log(team[0].innerHTML);
     } 
   })
 }
@@ -49,7 +51,6 @@ async function setFlags() {
     if (code) {
       trueCode = code.code.toLowerCase()
       }
-      console.log(trueCode);
       if (value.nextElementSibling !== null) {
         value.nextElementSibling.classList.add(`flag-icon-${trueCode}`)
       } else {
@@ -79,8 +80,8 @@ changePopupButton.addEventListener('click', togglePopup)
 scheduleMini.addEventListener('submit', function(submit) {
   let sub = true
   scheduleLi.forEach(value => {
-    const team = scheduleMiniUl.querySelectorAll('.team')
-    if (team[0] !== '') {
+    const team = value.querySelectorAll('.team')
+    if (team[0].innerHTML !== '') {
       const input = value.querySelectorAll('.scoreInput')
       input.forEach(value => {
         if (value.value === '') {
@@ -95,11 +96,17 @@ if (sub === false) {
   showInfo('Please fill in all fields')
 } 
 })
+
+
 mobileBurger.addEventListener('click', toggleBurger)
+mobileBurger.addEventListener('click', toggleBackgroundCover)
+mobileBurger.addEventListener('click', toggleHeaderLogo)
 navUl.addEventListener('click', function(event) {
   console.log(event.target);
   
   if (event.target.classList.contains('navUlLiA')) {
     toggleBurger()
+    toggleBackgroundCover()
+    toggleHeaderLogo()
   }
 })
