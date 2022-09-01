@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="assets/css/icon-font.css">
   <link rel="stylesheet" href="assets/css/owfont-regular.css">
   <link rel="stylesheet" media="(max-width: 699px)" href="assets/css/style_699.css">
-  <link rel="stylesheet" media="(min-width: 700px)" media="(max-width: 1020px)" href="assets/css/style_1020.css">
+  <link rel="stylesheet" media="(min-width: 700px) and (max-width: 1020px)" href="assets/css/style_1020.css">
   <link rel="stylesheet" media="(min-width: 1021px)" href="assets/css/style_1440.css">
   <title>Qatar 2022</title>
 </head>
@@ -72,19 +72,22 @@
               <div class="deadlineTime">
                 <div class="deadlineSection">
                   <span class="deadlineText">Days</span>
-                  <span class="deadlineNum deadlineDays">
+                  <span class="deadlineTextMobile">D</span>
+                  <span class="deadlineNum deadlineDays">80
                     <cfoutput>#days#</cfoutput>
                   </span>
                 </div>
                 <div class="deadlineSection">
                   <span class="deadlineText">Hours</span>
-                  <span class="deadlineNum deadlineHours">
+                  <span class="deadlineTextMobile">H</span>
+                  <span class="deadlineNum deadlineHours">12
                     <cfoutput>#hours#</cfoutput>
                   </span>
                 </div>
                 <div class="deadlineSection">
                   <span class="deadlineText">Minutes</span>
-                  <span class="deadlineNum deadlineMinutes">
+                  <span class="deadlineTextMobile">M</span>
+                  <span class="deadlineNum deadlineMinutes">15
                     <cfoutput>#minutes#</cfoutput>
                   </span>
                 </div>
@@ -100,9 +103,6 @@
                 <h2 class="scheduleMiniBlockHeader">
                   NEXT MATCHES
                 </h2>
-                <div class="scheduleMiniDate">
-                  20 November 2022
-                </div>
               </div>
 
               <form class="scheduleMiniBlock miniBlock" name="scheduleMini" action="insert_action_bets.cfm"
@@ -125,38 +125,30 @@
                         <div class="matchCardCenterBlock">
                           <div class="firstTeamMini teamBlock">
                             <span class="flag-icon"></span>
-                            <span class="team">
-                              <cfif dateDiff("d", myVar ,now()) EQ 0>
-                                <cfoutput query="Match1">#Team1#</cfoutput>
-                              </cfif>
-                            </span>
+                            <span class="team">England</span>
                           </div>
                           <table class="scoreMini">
                             <tbody>
                               <tr>
                                 <td>
                                   <input name="GolQua1" maxlength="1" maxsize="1" class="scoreInput" type="number"
-                                    min="0" max="9">
+                                    min="0" max="9" value="1">
                                 </td>
                                 <td>
-                                  <input name="GolEcu1" maxlength="1" class="scoreInput" type="number" min="0" max="9">
+                                  <input name="GolEcu1" maxlength="1" class="scoreInput" type="number" min="0" max="9" value="2">
                                 </td>
                               </tr>
                             </tbody>
                           </table>
                           <div class="secondTeamMini teamBlock">
-                            <span class="team">
-                              <cfif dateDiff("d", myVar ,now()) EQ 0>
-                                <cfoutput query="Match1">#Team2#</cfoutput>
-                              </cfif>
-                            </span>
+                            <span class="team">Iran</span>
                             <span class="flag-icon"></span>
                           </div>
                         </div>
                         <div class="matchCardBottomBlock">
-                          <span class="matchInfo">Group a</span>
+                          <span class="matchInfo">Group B</span>
                           <span class="matchTime">10:00</span>
-                          <span class="matchDate">20.11.22</span>
+                          <span class="matchDate">21.11.22</span>
                         </div>
                       </div>
                     </li>
@@ -179,39 +171,31 @@
                           <div class="matchCardCenterBlock">
                             <div class="firstTeamMini teamBlock">
                               <span class="flag-icon"></span>
-                              <span class="team">
-                                <cfif dateDiff("n", myVar2 ,now()) GT 0>
-                                  <cfoutput query="Match2">#Team1#</cfoutput>
-                                </cfif>
-                              </span>
+                              <span class="team">Senegal</span>
                             </div>
                             <table class="scoreMini">
                               <tbody>
                                 <tr>
                                   <td>
                                     <input name="GolEng1" maxlength="1" class="scoreInput" type="number" min="0"
-                                      max="9">
+                                      max="9" value="3">
                                   </td>
                                   <td>
                                     <input name="GolIra1" maxlength="1" class="scoreInput" type="number" min="0"
-                                      max="9">
+                                      max="9" value="3">
                                   </td>
                                 </tr>
                               </tbody>
                             </table>
                             <div class="secondTeamMini teamBlock">
-                              <span class="team">
-                                <cfif dateDiff("n", myVar2 ,now()) GT 0>
-                                  <cfoutput query="Match2">#Team2#</cfoutput>
-                                </cfif>
-                              </span>
+                              <span class="team">Netherlands</span>
                               <span class="flag-icon"></span>
                             </div>
                           </div>
                           <div class="matchCardBottomBlock">
-                            <span class="matchInfo">Group a</span>
-                            <span class="matchTime">10:00</span>
-                            <span class="matchDate">20.11.22</span>
+                            <span class="matchInfo">Group A</span>
+                            <span class="matchTime">13:00</span>
+                            <span class="matchDate">21.11.22</span>
                           </div>
                         </div>
                       </li>
@@ -228,39 +212,31 @@
                           <div class="matchCardCenterBlock">
                             <div class="firstTeamMini teamBlock">
                               <span class="flag-icon"></span>
-                              <span class="team">
-                                <cfif dateDiff("n", myVar2 ,now()) GT 0>
-                                  <cfoutput query="Match3">#Team1#</cfoutput>
-                                </cfif>
-                              </span>
+                              <span class="team">USA</span>
                             </div>
                             <table class="scoreMini">
                               <tbody>
                                 <tr>
                                   <td>
                                     <input name="GolSen1" maxlength="1" class="scoreInput" type="number" min="0"
-                                      max="9">
+                                      max="9" value="1">
                                   </td>
                                   <td>
                                     <input name="GolNet1" maxlength="1" class="scoreInput" type="number" min="0"
-                                      max="9">
+                                      max="9" value="0">
                                   </td>
                                 </tr>
                               </tbody>
                             </table>
                             <div class="secondTeamMini teamBlock">
-                              <span class="team">
-                                <cfif dateDiff("n", myVar2 ,now()) GT 0>
-                                  <cfoutput query="Match3">#Team2#</cfoutput>
-                                </cfif>
-                              </span>
+                              <span class="team">Wales</span>
                               <span class="flag-icon"></span>
                             </div>
                           </div>
                           <div class="matchCardBottomBlock">
                             <span class="matchInfo">Group a</span>
-                            <span class="matchTime">10:00</span>
-                            <span class="matchDate">20.11.22</span>
+                            <span class="matchTime">16:00</span>
+                            <span class="matchDate">21.11.22</span>
                           </div>
                         </div>
                       </li>
@@ -277,11 +253,7 @@
                           <div class="matchCardCenterBlock">
                             <div class="firstTeamMini teamBlock">
                               <span class="flag-icon"></span>
-                              <span class="team">
-                                <cfif dateDiff("n", myVar2 ,now()) GT 0>
-                                  <cfoutput query="Match4">#Team1#</cfoutput>
-                                </cfif>
-                              </span>
+                              <span class="team"></span>
                             </div>
                             <table class="scoreMini">
                               <tbody>
@@ -298,11 +270,7 @@
                               </tbody>
                             </table>
                             <div class="secondTeamMini teamBlock">
-                              <span class="team">
-                                <cfif dateDiff("n", myVar2 ,now()) GT 0>
-                                  <cfoutput query="Match4">#Team2#</cfoutput>
-                                </cfif>
-                              </span>
+                              <span class="team"></span>
                               <span class="flag-icon"></span>
                             </div>
                           </div>
@@ -401,11 +369,11 @@
                       <div class="playerPosition">
                         1
                       </div>
-                      <div class="playerNameMini">
+                      <div class="playerNameMini">Val
                         <cfoutput query="bet1">#username#
                         </cfoutput>
                       </div>
-                      <div class="playerPointsMini">
+                      <div class="playerPointsMini">30
                         <cfoutput query="bet1">#points#
                         </cfoutput>
                       </div>
@@ -416,11 +384,11 @@
                       <div class="playerPosition">
                         2
                       </div>
-                      <div class="playerNameMini">
+                      <div class="playerNameMini">Biba
                         <cfoutput query="bet2">#username#
                         </cfoutput>
                       </div>
-                      <div class="playerPointsMini">
+                      <div class="playerPointsMini">25
                         <cfoutput query="bet2">#points#
                         </cfoutput>
                       </div>
@@ -431,11 +399,11 @@
                       <div class="playerPosition">
                         3
                       </div>
-                      <div class="playerNameMini">
+                      <div class="playerNameMini">kam
                         <cfoutput query="bet3">#username#
                         </cfoutput>
                       </div>
-                      <div class="playerPointsMini">
+                      <div class="playerPointsMini">24
                         <cfoutput query="bet3">#points#
                         </cfoutput>
                       </div>
@@ -446,11 +414,11 @@
                       <div class="playerPosition">
                         4
                       </div>
-                      <div class="playerNameMini">
+                      <div class="playerNameMini">Boba
                         <cfoutput query="bet4">#username#
                         </cfoutput>
                       </div>
-                      <div class="playerPointsMini">
+                      <div class="playerPointsMini">20
                         <cfoutput query="bet4">#points#
                         </cfoutput>
                       </div>
@@ -461,11 +429,11 @@
                       <div class="playerPosition">
                         5
                       </div>
-                      <div class="playerNameMini">
+                      <div class="playerNameMini">Stupid fucking cunt with very long nickname
                         <cfoutput query="bet5">#username#
                         </cfoutput>
                       </div>
-                      <div class="playerPointsMini">
+                      <div class="playerPointsMini">15
                         <cfoutput query="bet5">#points#
                         </cfoutput>
                       </div>
@@ -480,9 +448,9 @@
       <!-- Matchday -->
 
       <section class="matchdaySection" id="matchday">
-        <h1 class="matchdayTitle">
+        <h2 class="matchdayTitle">
           MATCHDAY
-        </h1>
+        </h2>
         <div class="matchdayBlock container">
 
           <!-- 1st event start -->
@@ -498,9 +466,7 @@
 
             <div class="matchDayEventHeader">
               <section class="scoreSection">
-                <div class="eventTeam eventFirstTeam">
-                  <cfoutput query="results1">#Team1#</cfoutput>
-                </div>
+                <div class="eventTeam eventFirstTeam"></div>
                 <div class="eventScore">
                   <span class="eventFirstTeamScore">
                     <cfoutput query="results1">#GoalsTeam1#</cfoutput>
@@ -510,9 +476,7 @@
                     <cfoutput query="results1">#GoalsTeam2#</cfoutput>
                   </span>
                 </div>
-                <div class="eventTeam eventFirstTeam">
-                  <cfoutput query="results1">#Team2#</cfoutput>
-                </div>
+                <div class="eventTeam eventFirstTeam"><cfoutput query="results1">#Team2#</cfoutput></div>
               </section>
               <section class="eventInfoSection">
                 <span class="eventGroup eventInfo">
@@ -665,17 +629,13 @@
 
             <div class="matchDayEventHeader">
               <section class="scoreSection">
-                <div class="eventTeam eventFirstTeam">
-                  England
-                </div>
+                <div class="eventTeam eventFirstTeam">England</div>
                 <div class="eventScore">
                   <span class="eventFirstTeamScore">0</span>
                   <span>-</span>
                   <span class="eventSecondTeamScore">0</span>
                 </div>
-                <div class="eventTeam eventFirstTeam">
-                  Iran
-                </div>
+                <div class="eventTeam eventFirstTeam">Iran</div>
               </section>
               <section class="eventInfoSection">
                 <span class="eventGroup eventInfo">Group B</span>
@@ -688,18 +648,18 @@
               <li class="playersBetsLi">
                 <div class="playerBetCard">
                   <div class="scoreMini">
-                    <div class="scoreInput" type="number"></div>
-                    <div class="scoreInput" type="number"></div>
+                    <div class="scoreInput" type="number">1</div>
+                    <div class="scoreInput" type="number">1</div>
                   </div>
                   <div class="playerCard myPlayerCard">
                     <div class="playerPosition">
                       1
                     </div>
-                    <div class="playerNameMini">
+                    <div class="playerNameMini">Val
                       <cfoutput query="bet1">#username#
                       </cfoutput>
                     </div>
-                    <div class="playerPointsMini">
+                    <div class="playerPointsMini">30
                       <cfoutput query="bet1">#points#
                       </cfoutput>
                     </div>
@@ -709,18 +669,18 @@
               <li class="playersBetsLi">
                 <div class="playerBetCard">
                   <div class="scoreMini">
-                    <div class="scoreInput" type="number"></div>
-                    <div class="scoreInput" type="number"></div>
+                    <div class="scoreInput" type="number">1</div>
+                    <div class="scoreInput" type="number">2</div>
                   </div>
                   <div class="playerCard firstPlace">
                     <div class="playerPosition">
                       2
                     </div>
-                    <div class="playerNameMini">
+                    <div class="playerNameMini">Biba
                       <cfoutput query="bet2">#username#
                       </cfoutput>
                     </div>
-                    <div class="playerPointsMini">
+                    <div class="playerPointsMini">25
                       <cfoutput query="bet2">#points#
                       </cfoutput>
                     </div>
@@ -730,18 +690,18 @@
               <li class="playersBetsLi">
                 <div class="playerBetCard">
                   <div class="scoreMini">
-                    <div class="scoreInput" type="number"></div>
-                    <div class="scoreInput" type="number"></div>
+                    <div class="scoreInput" type="number">1</div>
+                    <div class="scoreInput" type="number">2</div>
                   </div>
                   <div class="playerCard">
                     <div class="playerPosition">
                       3
                     </div>
-                    <div class="playerNameMini">
+                    <div class="playerNameMini">kam
                       <cfoutput query="bet3">#username#
                       </cfoutput>
                     </div>
-                    <div class="playerPointsMini">
+                    <div class="playerPointsMini">24
                       <cfoutput query="bet3">#points#
                       </cfoutput>
                     </div>
@@ -751,18 +711,18 @@
               <li class="playersBetsLi">
                 <div class="playerBetCard">
                   <div class="scoreMini">
-                    <div class="scoreInput" type="number"></div>
-                    <div class="scoreInput" type="number"></div>
+                    <div class="scoreInput" type="number">0</div>
+                    <div class="scoreInput" type="number">0</div>
                   </div>
                   <div class="playerCard">
                     <div class="playerPosition">
                       4
                     </div>
-                    <div class="playerNameMini">
+                    <div class="playerNameMini">Boba
                       <cfoutput query="bet4">#username#
                       </cfoutput>
                     </div>
-                    <div class="playerPointsMini">
+                    <div class="playerPointsMini">20
                       <cfoutput query="bet4">#points#
                       </cfoutput>
                     </div>
@@ -772,18 +732,18 @@
               <li class="playersBetsLi">
                 <div class="playerBetCard">
                   <div class="scoreMini">
-                    <div class="scoreInput" type="number"></div>
-                    <div class="scoreInput" type="number"></div>
+                    <div class="scoreInput" type="number">8</div>
+                    <div class="scoreInput" type="number">8</div>
                   </div>
                   <div class="playerCard">
                     <div class="playerPosition">
                       5
                     </div>
-                    <div class="playerNameMini">
+                    <div class="playerNameMini">Stupid fucking cunt width very long nickname
                       <cfoutput query="bet5">#username#
                       </cfoutput>
                     </div>
-                    <div class="playerPointsMini">
+                    <div class="playerPointsMini">15
                       <cfoutput query="bet5">#points#
                       </cfoutput>
                     </div>
@@ -800,17 +760,13 @@
 
             <div class="matchDayEventHeader">
               <section class="scoreSection">
-                <div class="eventTeam eventFirstTeam">
-                  Senegal
-                </div>
+                <div class="eventTeam eventFirstTeam">Senegal</div>
                 <div class="eventScore">
                   <span class="eventFirstTeamScore">0</span>
                   <span>-</span>
                   <span class="eventSecondTeamScore">0</span>
                 </div>
-                <div class="eventTeam eventFirstTeam">
-                  Netherlands
-                </div>
+                <div class="eventTeam eventFirstTeam"> Netherlands</div>
               </section>
               <section class="eventInfoSection">
                 <span class="eventGroup eventInfo">Group A</span>
@@ -935,17 +891,13 @@
 
             <div class="matchDayEventHeader">
               <section class="scoreSection">
-                <div class="eventTeam eventFirstTeam">
-                  USA
-                </div>
+                <div class="eventTeam eventFirstTeam">USA</div>
                 <div class="eventScore">
                   <span class="eventFirstTeamScore">0</span>
                   <span>-</span>
                   <span class="eventSecondTeamScore">0</span>
                 </div>
-                <div class="eventTeam eventFirstTeam">
-                  Wales
-                </div>
+                <div class="eventTeam eventFirstTeam">Wales</div>
               </section>
               <section class="eventInfoSection">
                 <span class="eventGroup eventInfo">Group B</span>
@@ -1071,9 +1023,9 @@
       <!-- TABLE -->
 
       <section class="tableSection" id="table">
-        <h1 class="tableTitle">
+        <h2 class="tableTitle">
           TABLE
-        </h1>
+        </h2>
         <div class="mainTableWrapper container">
           <div class="mainTable">
             <table class="bigTable">

@@ -1,4 +1,6 @@
+.deadlineTextMobile,
 .mobileBurger,
+cfoutput,
 li.loginMobileLink {
 display: none;
 }
@@ -644,6 +646,7 @@ margin-left: auto;
   width: 50px;
   text-align: center;
   padding: 5px;
+  font-weight: bold;
 }
 
 .bigTable tr:hover {
