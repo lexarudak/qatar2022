@@ -4,7 +4,7 @@ cfoutput,
   display: none;
 }
 
-.playerNameMini,
+.playerBetCard,
 .playerNameMini,
 .eventTeam {
   white-space: nowrap;
@@ -326,6 +326,7 @@ main {
   box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;
   overflow: hidden;
   width: 100%;
+  max-width: 500px;
 }
 
 .section1 {
@@ -373,9 +374,9 @@ main {
   width: 100%;
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding-left: 7px;
-  padding-right: 7px;
+  gap: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .team {
@@ -417,8 +418,8 @@ display: none;
 
 .scoreInput {
   width: 22px;
-  height: 22px;
-  border-radius: 3px;
+  height: 35px;
+  border-radius: 5px;
   border: none;
   outline: none;
   cursor: pointer;
@@ -426,8 +427,8 @@ display: none;
   box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;
   text-align: center;
   font-weight: bold;
-  font-size: 16px;
-  line-height: 22px;
+  font-size: 20px;
+  line-height: 35px;
 }
 
 .scheduleMiniButton {
@@ -492,6 +493,7 @@ display: none;
 
 .playerNameMini {
   padding-left: 10px;
+  flex-shrink: 1;
 }
 
 .playerPointsMini {
@@ -540,6 +542,11 @@ margin-left: auto;
   box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;
   width: 100%;
   background-color: #610d29;
+  max-width: 500px;
+}
+
+.matchDayEvent.hide {
+  display: none;
 }
 
 .matchDayEventHeader {
@@ -570,11 +577,21 @@ margin-left: auto;
 
 .eventTeam {
   font-size: 16px;
-  font-weight: bold;
+  font-weight: bolder;
   width: 100%;
-  text-align: center;
   padding: 0px 5px;
 }
+
+.eventFirstTeam {
+  text-align: end;
+  margin-right: 10px;
+}
+
+.eventSecondTeam {
+  text-align: left;
+  margin-left: 10px;
+}
+
 
 .eventInfo {
   font-size: 12px;
@@ -629,26 +646,8 @@ margin-left: auto;
 .playersBetsLi {
   position: relative;
   width: 100%;
-  overflow: hidden;
 }
 
-.matchDayEvent .teamBlock,
-.playerBetCard .playerCard {
-  width: 100%;
-  padding: 0px, 7px;
-  flex-shrink: 1;
-
-}
-
-.matchDayEvent .team,
-.playerBetCard .playerPosition,
-.playerBetCard .playerNameMini,
-.playerBetCard .playerPointsMini {
-}
-
-.playerBetCard .playerNameMini {
-  padding-left: 10px;
-}
 
 .firstTeamMini {
   display: flex;
@@ -669,10 +668,11 @@ margin-left: auto;
   position: relative;
 }
 
-.playerBetCard {
+li .playerBetCard {
+  width: 100%;
   display: flex;
   align-items: center;
-  justify-content: end;
+  justify-content: space-between;
   gap: 10px;
 }
 
@@ -792,7 +792,6 @@ td.tdMain,
   width: 35px;
   text-align: left;
   padding-left: 5px;
-  font-size: 14px;
 }
 
 .tdMain .mainName {
@@ -802,7 +801,6 @@ td.tdMain,
   font-weight: bold;
   text-align: left;
   white-space: nowrap;
-  font-size: 14px;
 }
 
 .tdMain .mainPoints {
@@ -810,7 +808,6 @@ td.tdMain,
   text-align: left;
   width: 35px;
   padding-right: 5px;
-  font-size: 14px;
 }
 
 th.tdMain .mainName,
@@ -1210,14 +1207,18 @@ footer {
   font-size: 14px;
 }
 
+.playerBetCard .playerCard {
+  width: calc(100% - 59px);
+}
+
+.playersBetsLi:first-child .playerCard {
+  background-color: rgb(142, 209, 171);
+}
 
 .myPlayerCard {
   background-color: rgb(212, 232, 139);
 }
 
-.firstPlace {
-  background-color: rgb(142, 209, 171);
-}
 
 /* buttons */
 

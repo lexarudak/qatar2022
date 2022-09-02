@@ -14,6 +14,7 @@ const scheduleMiniUl = document.querySelector('.scheduleMiniUl')
 const mobileBurger = document.querySelector('.mobileBurger')
 const navUl = document.querySelector('.navUl')
 const headerLogo = document.querySelector('.headerLogo')
+const matchDayEvent = document.querySelectorAll('.matchDayEvent')
 
 // functions
 const toggleHeaderLogo = () => headerLogo.classList.toggle('active')
@@ -38,6 +39,16 @@ function hideNullMatches () {
   })
 }
 hideNullMatches()
+
+function hideEmptyTables () {
+  matchDayEvent.forEach(value => {
+    const team = value.querySelectorAll('.eventTeam')
+    if (team[0].innerHTML === '') {
+      value.classList.add('hide')
+    }
+  })
+}
+hideEmptyTables()
 
 async function setFlags() {
   const res = await fetch('/qatar2022/assets/js/flagList.json')
