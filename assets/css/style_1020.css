@@ -5,6 +5,14 @@ li.loginMobileLink {
 display: none;
 }
 
+.playerBetCard,
+.playerNameMini,
+.eventTeam {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
 * {
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
@@ -335,6 +343,7 @@ display: none;
   box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;
   text-align: center;
   font-weight: bold;
+  line-height: 35px;
 }
 
 .scheduleMiniButton {
@@ -446,6 +455,10 @@ margin-left: auto;
   background-color: #610d29;
 }
 
+.matchDayEvent.hide {
+  display: none;
+}
+
 .matchDayEventHeader {
   display: flex;
   flex-direction: column;
@@ -476,8 +489,17 @@ margin-left: auto;
   font-size: 22px;
   font-weight: bold;
   width: 100%;
-  text-align: center;
   padding: 0px 5px;
+}
+
+.eventFirstTeam {
+  text-align: end;
+  margin-right: 10px;
+}
+
+.eventSecondTeam {
+  text-align: left;
+  margin-left: 10px;
 }
 
 .eventInfo {
@@ -537,11 +559,8 @@ margin-left: auto;
   padding: 0px, 20px;
 }
 
-.matchDayEvent .team,
-.playerBetCard .playerPosition,
-.playerBetCard .playerNameMini,
-.playerBetCard .playerPointsMini {
-  font-size: 16px;
+.playerBetCard .playerCard {
+  width: 330px;
 }
 
 .playerBetCard .playerNameMini {
@@ -1099,7 +1118,7 @@ footer {
   background-color: rgb(212, 232, 139);
 }
 
-.firstPlace {
+.playersBetsLi:first-child .playerCard {
   background-color: rgb(142, 209, 171);
 }
 

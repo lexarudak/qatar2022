@@ -132,10 +132,10 @@
                               <tr>
                                 <td>
                                   <input name="GolQua1" maxlength="1" maxsize="1" class="scoreInput" type="number"
-                                    min="0" max="9" value="1">
+                                    min="0" max="9" >
                                 </td>
                                 <td>
-                                  <input name="GolEcu1" maxlength="1" class="scoreInput" type="number" min="0" max="9" value="2">
+                                  <input name="GolEcu1" maxlength="1" class="scoreInput" type="number" min="0" max="9" >
                                 </td>
                               </tr>
                             </tbody>
@@ -178,11 +178,11 @@
                                 <tr>
                                   <td>
                                     <input name="GolEng1" maxlength="1" class="scoreInput" type="number" min="0"
-                                      max="9" value="3">
+                                      max="9" >
                                   </td>
                                   <td>
                                     <input name="GolIra1" maxlength="1" class="scoreInput" type="number" min="0"
-                                      max="9" value="3">
+                                      max="9" >
                                   </td>
                                 </tr>
                               </tbody>
@@ -219,11 +219,11 @@
                                 <tr>
                                   <td>
                                     <input name="GolSen1" maxlength="1" class="scoreInput" type="number" min="0"
-                                      max="9" value="1">
+                                      max="9" >
                                   </td>
                                   <td>
                                     <input name="GolNet1" maxlength="1" class="scoreInput" type="number" min="0"
-                                      max="9" value="0">
+                                      max="9" >
                                   </td>
                                 </tr>
                               </tbody>
@@ -234,7 +234,7 @@
                             </div>
                           </div>
                           <div class="matchCardBottomBlock">
-                            <span class="matchInfo">Group a</span>
+                            <span class="matchInfo">Group B</span>
                             <span class="matchTime">16:00</span>
                             <span class="matchDate">21.11.22</span>
                           </div>
@@ -476,7 +476,7 @@
                     <cfoutput query="results1">#GoalsTeam2#</cfoutput>
                   </span>
                 </div>
-                <div class="eventTeam eventFirstTeam"><cfoutput query="results1">#Team2#</cfoutput></div>
+                <div class="eventTeam eventSecondTeam"><cfoutput query="results1">#Team2#</cfoutput></div>
               </section>
               <section class="eventInfoSection">
                 <span class="eventGroup eventInfo">
@@ -504,7 +504,7 @@
                       <cfoutput query="bet1">#GoalsTeam2#</cfoutput>
                     </div>
                   </div>
-                  <div class="playerCard myPlayerCard">
+                  <div class="playerCard">
                     <div class="playerPosition">
                       1
                     </div>
@@ -529,7 +529,7 @@
                       <cfoutput query="bet2">#GoalsTeam2#</cfoutput>
                     </div>
                   </div>
-                  <div class="playerCard firstPlace">
+                  <div class="playerCard">
                     <div class="playerPosition">
                       2
                     </div>
@@ -635,7 +635,7 @@
                   <span>-</span>
                   <span class="eventSecondTeamScore">0</span>
                 </div>
-                <div class="eventTeam eventFirstTeam">Iran</div>
+                <div class="eventTeam eventSecondTeam">Iran</div>
               </section>
               <section class="eventInfoSection">
                 <span class="eventGroup eventInfo">Group B</span>
@@ -651,7 +651,7 @@
                     <div class="scoreInput" type="number">1</div>
                     <div class="scoreInput" type="number">1</div>
                   </div>
-                  <div class="playerCard myPlayerCard">
+                  <div class="playerCard">
                     <div class="playerPosition">
                       1
                     </div>
@@ -672,7 +672,7 @@
                     <div class="scoreInput" type="number">1</div>
                     <div class="scoreInput" type="number">2</div>
                   </div>
-                  <div class="playerCard firstPlace">
+                  <div class="playerCard">
                     <div class="playerPosition">
                       2
                     </div>
@@ -693,7 +693,7 @@
                     <div class="scoreInput" type="number">1</div>
                     <div class="scoreInput" type="number">2</div>
                   </div>
-                  <div class="playerCard">
+                  <div class="playerCard myPlayerCard">
                     <div class="playerPosition">
                       3
                     </div>
@@ -766,7 +766,7 @@
                   <span>-</span>
                   <span class="eventSecondTeamScore">0</span>
                 </div>
-                <div class="eventTeam eventFirstTeam"> Netherlands</div>
+                <div class="eventTeam eventSecondTeam"> Netherlands</div>
               </section>
               <section class="eventInfoSection">
                 <span class="eventGroup eventInfo">Group A</span>
@@ -779,18 +779,18 @@
               <li class="playersBetsLi">
                 <div class="playerBetCard">
                   <div class="scoreMini">
-                    <div class="scoreInput" type="number"></div>
-                    <div class="scoreInput" type="number"></div>
+                    <div class="scoreInput" type="number">0</div>
+                    <div class="scoreInput" type="number">1</div>
                   </div>
-                  <div class="playerCard myPlayerCard">
+                  <div class="playerCard">
                     <div class="playerPosition">
                       1
                     </div>
-                    <div class="playerNameMini">
+                    <div class="playerNameMini">Val
                       <cfoutput query="bet1">#username#
                       </cfoutput>
                     </div>
-                    <div class="playerPointsMini">
+                    <div class="playerPointsMini">30
                       <cfoutput query="bet1">#points#
                       </cfoutput>
                     </div>
@@ -800,18 +800,18 @@
               <li class="playersBetsLi">
                 <div class="playerBetCard">
                   <div class="scoreMini">
-                    <div class="scoreInput" type="number"></div>
-                    <div class="scoreInput" type="number"></div>
+                    <div class="scoreInput" type="number">3</div>
+                    <div class="scoreInput" type="number">4</div>
                   </div>
-                  <div class="playerCard firstPlace">
+                  <div class="playerCard">
                     <div class="playerPosition">
                       2
                     </div>
-                    <div class="playerNameMini">
+                    <div class="playerNameMini">Biba
                       <cfoutput query="bet2">#username#
                       </cfoutput>
                     </div>
-                    <div class="playerPointsMini">
+                    <div class="playerPointsMini">25
                       <cfoutput query="bet2">#points#
                       </cfoutput>
                     </div>
@@ -821,18 +821,18 @@
               <li class="playersBetsLi">
                 <div class="playerBetCard">
                   <div class="scoreMini">
-                    <div class="scoreInput" type="number"></div>
-                    <div class="scoreInput" type="number"></div>
+                    <div class="scoreInput" type="number">2</div>
+                    <div class="scoreInput" type="number">2</div>
                   </div>
-                  <div class="playerCard">
+                  <div class="playerCard myPlayerCard">
                     <div class="playerPosition">
                       3
                     </div>
-                    <div class="playerNameMini">
+                    <div class="playerNameMini">kam
                       <cfoutput query="bet3">#username#
                       </cfoutput>
                     </div>
-                    <div class="playerPointsMini">
+                    <div class="playerPointsMini">24
                       <cfoutput query="bet3">#points#
                       </cfoutput>
                     </div>
@@ -842,18 +842,18 @@
               <li class="playersBetsLi">
                 <div class="playerBetCard">
                   <div class="scoreMini">
-                    <div class="scoreInput" type="number"></div>
-                    <div class="scoreInput" type="number"></div>
+                    <div class="scoreInput" type="number">1</div>
+                    <div class="scoreInput" type="number">1</div>
                   </div>
                   <div class="playerCard">
                     <div class="playerPosition">
                       4
                     </div>
-                    <div class="playerNameMini">
+                    <div class="playerNameMini">Boba
                       <cfoutput query="bet4">#username#
                       </cfoutput>
                     </div>
-                    <div class="playerPointsMini">
+                    <div class="playerPointsMini">20
                       <cfoutput query="bet4">#points#
                       </cfoutput>
                     </div>
@@ -863,18 +863,18 @@
               <li class="playersBetsLi">
                 <div class="playerBetCard">
                   <div class="scoreMini">
-                    <div class="scoreInput" type="number"></div>
-                    <div class="scoreInput" type="number"></div>
+                    <div class="scoreInput" type="number">2</div>
+                    <div class="scoreInput" type="number">2</div>
                   </div>
                   <div class="playerCard">
                     <div class="playerPosition">
                       5
                     </div>
-                    <div class="playerNameMini">
+                    <div class="playerNameMini">Stupid fucking cunt with very long nickname
                       <cfoutput query="bet5">#username#
                       </cfoutput>
                     </div>
-                    <div class="playerPointsMini">
+                    <div class="playerPointsMini">15
                       <cfoutput query="bet5">#points#
                       </cfoutput>
                     </div>
@@ -897,7 +897,7 @@
                   <span>-</span>
                   <span class="eventSecondTeamScore">0</span>
                 </div>
-                <div class="eventTeam eventFirstTeam">Wales</div>
+                <div class="eventTeam eventSecondTeam">Wales</div>
               </section>
               <section class="eventInfoSection">
                 <span class="eventGroup eventInfo">Group B</span>
@@ -910,18 +910,18 @@
               <li class="playersBetsLi">
                 <div class="playerBetCard">
                   <div class="scoreMini">
-                    <div class="scoreInput" type="number"></div>
-                    <div class="scoreInput" type="number"></div>
+                    <div class="scoreInput" type="number">1</div>
+                    <div class="scoreInput" type="number">1</div>
                   </div>
-                  <div class="playerCard myPlayerCard">
+                  <div class="playerCard">
                     <div class="playerPosition">
                       1
                     </div>
-                    <div class="playerNameMini">
+                    <div class="playerNameMini">Val
                       <cfoutput query="bet1">#username#
                       </cfoutput>
                     </div>
-                    <div class="playerPointsMini">
+                    <div class="playerPointsMini">30
                       <cfoutput query="bet1">#points#
                       </cfoutput>
                     </div>
@@ -931,18 +931,18 @@
               <li class="playersBetsLi">
                 <div class="playerBetCard">
                   <div class="scoreMini">
-                    <div class="scoreInput" type="number"></div>
-                    <div class="scoreInput" type="number"></div>
+                    <div class="scoreInput" type="number">2</div>
+                    <div class="scoreInput" type="number">2</div>
                   </div>
-                  <div class="playerCard firstPlace">
+                  <div class="playerCard">
                     <div class="playerPosition">
                       2
                     </div>
-                    <div class="playerNameMini">
+                    <div class="playerNameMini">Biba
                       <cfoutput query="bet2">#username#
                       </cfoutput>
                     </div>
-                    <div class="playerPointsMini">
+                    <div class="playerPointsMini">25
                       <cfoutput query="bet2">#points#
                       </cfoutput>
                     </div>
@@ -952,18 +952,18 @@
               <li class="playersBetsLi">
                 <div class="playerBetCard">
                   <div class="scoreMini">
-                    <div class="scoreInput" type="number"></div>
-                    <div class="scoreInput" type="number"></div>
+                    <div class="scoreInput" type="number">1</div>
+                    <div class="scoreInput" type="number">2</div>
                   </div>
-                  <div class="playerCard">
+                  <div class="playerCard myPlayerCard">
                     <div class="playerPosition">
                       3
                     </div>
-                    <div class="playerNameMini">
+                    <div class="playerNameMini">kam
                       <cfoutput query="bet3">#username#
                       </cfoutput>
                     </div>
-                    <div class="playerPointsMini">
+                    <div class="playerPointsMini">24
                       <cfoutput query="bet3">#points#
                       </cfoutput>
                     </div>
@@ -973,18 +973,18 @@
               <li class="playersBetsLi">
                 <div class="playerBetCard">
                   <div class="scoreMini">
-                    <div class="scoreInput" type="number"></div>
-                    <div class="scoreInput" type="number"></div>
+                    <div class="scoreInput" type="number">1</div>
+                    <div class="scoreInput" type="number">0</div>
                   </div>
                   <div class="playerCard">
                     <div class="playerPosition">
                       4
                     </div>
-                    <div class="playerNameMini">
+                    <div class="playerNameMini">Boba
                       <cfoutput query="bet4">#username#
                       </cfoutput>
                     </div>
-                    <div class="playerPointsMini">
+                    <div class="playerPointsMini">20
                       <cfoutput query="bet4">#points#
                       </cfoutput>
                     </div>
@@ -994,18 +994,18 @@
               <li class="playersBetsLi">
                 <div class="playerBetCard">
                   <div class="scoreMini">
-                    <div class="scoreInput" type="number"></div>
-                    <div class="scoreInput" type="number"></div>
+                    <div class="scoreInput" type="number">9</div>
+                    <div class="scoreInput" type="number">0</div>
                   </div>
                   <div class="playerCard">
                     <div class="playerPosition">
                       5
                     </div>
-                    <div class="playerNameMini">
+                    <div class="playerNameMini">Stupid fucking cunt with very long nickname
                       <cfoutput query="bet5">#username#
                       </cfoutput>
                     </div>
-                    <div class="playerPointsMini">
+                    <div class="playerPointsMini">15
                       <cfoutput query="bet5">#points#
                       </cfoutput>
                     </div>
@@ -1120,15 +1120,15 @@
                       1
                     </div>
                     <div class="mainName">
-                      Player 1
+                      Val
                     </div>
                     <div class="mainPoints">
                       30
                     </div>
                   </td>
-                  <td class="td">-</td>
-                  <td class="td">-</td>
-                  <td class="td">-</td>
+                  <td class="td">10</td>
+                  <td class="td">10</td>
+                  <td class="td">10</td>
                   <td class="td">-</td>
                   <td class="td">-</td>
                   <td class="td">-</td>
@@ -1156,12 +1156,15 @@
                       2
                     </div>
                     <div class="mainName">
-                      Player 2
+                      Biba
                     </div>
                     <div class="mainPoints">
                       25
                     </div>
                   </td>
+                  <td class="td">10</td>
+                  <td class="td">10</td>
+                  <td class="td">5</td>
                   <td class="td">-</td>
                   <td class="td">-</td>
                   <td class="td">-</td>
@@ -1181,10 +1184,7 @@
                   <td class="td">-</td>
                   <td class="td">-</td>
                   <td class="td">-</td>
-                  <td class="td">-</td>
-                  <td class="td">-</td>
-                  <td class="td">-</td>
-                  <td class="td">-</td>
+                  <td class="td">0</td>
                 </tr>
                 <tr class="myTr">
                   <td class="tdMain">
@@ -1192,15 +1192,15 @@
                       3
                     </div>
                     <div class="mainName">
-                      Me
+                      kam
                     </div>
                     <div class="mainPoints">
                       24
                     </div>
                   </td>
-                  <td class="td">-</td>
-                  <td class="td">-</td>
-                  <td class="td">-</td>
+                  <td class="td">10</td>
+                  <td class="td">10</td>
+                  <td class="td">4</td>
                   <td class="td">-</td>
                   <td class="td">-</td>
                   <td class="td">-</td>
@@ -1228,15 +1228,15 @@
                       4
                     </div>
                     <div class="mainName">
-                      Player 4
+                      Boba
                     </div>
                     <div class="mainPoints">
                       20
                     </div>
                   </td>
-                  <td class="td">-</td>
-                  <td class="td">-</td>
-                  <td class="td">-</td>
+                  <td class="td">5</td>
+                  <td class="td">5</td>
+                  <td class="td">10</td>
                   <td class="td">-</td>
                   <td class="td">-</td>
                   <td class="td">-</td>
@@ -1264,15 +1264,15 @@
                       5
                     </div>
                     <div class="mainName">
-                      Player 5
+                      Stupid fucking cunt width very long nickname
                     </div>
                     <div class="mainPoints">
                       15
                     </div>
                   </td>
-                  <td class="td">-</td>
-                  <td class="td">-</td>
-                  <td class="td">-</td>
+                  <td class="td">5</td>
+                  <td class="td">5</td>
+                  <td class="td">5</td>
                   <td class="td">-</td>
                   <td class="td">-</td>
                   <td class="td">-</td>
