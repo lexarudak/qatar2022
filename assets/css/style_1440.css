@@ -331,7 +331,8 @@ display: none;
   box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;
   text-align: center;
   font-weight: bold;
-    line-height: 35px;
+  line-height: 35px;
+  padding: 0px;
 }
 
 .scheduleMiniButton {

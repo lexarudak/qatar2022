@@ -344,6 +344,7 @@ display: none;
   text-align: center;
   font-weight: bold;
   line-height: 35px;
+    padding: 0px;
 }
 
 .scheduleMiniButton {
